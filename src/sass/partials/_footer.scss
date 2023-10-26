@@ -1,0 +1,82 @@
+.mainFooter {
+  padding: 100px 100px 30px;
+  background-color: $colorBlueGrey;
+  color: $colorGrey50;
+  font-family: $textPrimary;
+  font-weight: 600;
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      height: 24px;
+      width: 97px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        font-weight: 500;
+        display: inline-block;
+        &:not(:last-child) {
+          padding-right: 122px;
+        }
+        a {
+          color: $colorGrey50;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &_icons {
+    display: flex;
+    font-size: 28px;
+    gap: 8px;
+    .anticon-twitter-circle,
+    .anticon-github {
+      svg {
+        fill: $colorBlueGrey300 !important;
+      }
+    }
+    .anticon-facebook {
+      svg {
+        fill: $colorBlue !important;
+      }
+    }
+    .anticon-instagram {
+      svg {
+        fill: #ee7dc1 !important;
+      }
+    }
+  }
+  hr {
+    color: #1e293b;
+  }
+  &_bottom {
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+    p {
+      color: $colorBlueGrey300;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mainFooter {
+    padding: 2rem;
+    &_inner {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.mainHeader {
+  padding: 26px 64px;
+  background-color: $colorWhite;
+  font-family: $textPrimary;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    height: 24px;
+    width: 97px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        padding-right: 122px;
+      }
+      a {
+        color: $colorDark;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &_btns {
+    .btn-secondary {
+      margin-right: 36px;
+    }
+  }
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .show-desktop {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}

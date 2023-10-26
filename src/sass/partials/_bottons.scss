@@ -1,0 +1,24 @@
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: $colorBlue;
+  color: $colorWhite;
+  border-radius: 8.3px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.btn-secondary {
+  background-color: $colorBlue25;
+  color: $colorBlue;
+}
+
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary {
+    font-size: 16px;
+    padding: 1rem 2rem;
+  }
+}

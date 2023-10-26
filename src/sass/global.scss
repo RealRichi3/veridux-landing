@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import "./partials/variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $colorDark;
+}
+@import "./partials/header";
+@import "./partials/bottons";
+@import "./partials/hero";
+@import "./partials/landingPage";
+@import "./partials/footer";
+@import "./partials/faqs";
