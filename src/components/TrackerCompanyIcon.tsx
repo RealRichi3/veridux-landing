@@ -1,5 +1,3 @@
-import React from "react"
-
 export const TrackerCompanyIcon = () => {
   return (
     <span className="trackang">

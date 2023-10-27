@@ -1,5 +1,3 @@
-import React from "react"
-
 export const GoodIcon = () => {
   return (
     <div>
