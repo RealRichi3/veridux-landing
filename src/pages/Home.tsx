@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Header } from "../components/Header"
 import { Hero } from "../components/Hero"
 import { Col, Row } from "antd"
@@ -6,11 +7,22 @@ import { QouteIcon } from "../components/QouteIcon"
 import { TrackerCompanyIcon } from "../components/TrackerCompanyIcon"
 import { Link } from "react-router-dom"
 import { Footer } from "../components/Footer"
+import { useRef } from "react"
+
 
 export const Home = () => {
+    const ref = useRef<HTMLDivElement>(null)
+
+    const scrollToRef = (() => {
+        console.log('clicked')
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' })
+        }
+    }) as any
+
     return (
         <div className="landingPage">
-            <Header />
+            <Header scrollIntoView={scrollToRef} />
             <div className="container">
                 <Hero />
                 <div className="why-choose-us">
@@ -18,7 +30,7 @@ export const Home = () => {
                     <h2>platform?</h2>
                     <Row gutter={[32, 32]} style={{ margin: "35px" }}>
                         <Col xs={24} md={12}>
-                            <div className="vendor-admin-item">
+                            <div className="vendor-admin-item" onClick={scrollToRef}>
                                 <GoodIcon />
                                 <span>
                                     <b>Vendors:</b> Effortless Product Management
@@ -78,7 +90,7 @@ export const Home = () => {
                             <Col xs={24} md={10}>
                                 <QouteIcon />
                                 <div style={{ marginTop: "30px" }}>
-                                    <p>"We love momaStore! Our</p>
+                                    <p>"We love Veridux! Our</p>
                                     <p>designers were using it for their</p>
                                     <p>projects, so clients already knew</p>
                                     <p>what Landingfolio was and how</p>
@@ -88,19 +100,19 @@ export const Home = () => {
                                     <small>
                                         <b>Jenny Wilson</b>
                                     </small>
-                                    <small style={{ color: "#52525B" }}>Co-Founder of</small>
-                                    <TrackerCompanyIcon />
+                                    {/* <small style={{ color: "#52525B" }}>Co-Founder of</small>
+                                    <TrackerCompanyIcon /> */}
                                 </div>
                             </Col>
                         </Row>
                     </div>
                 </div>
 
-                <div className="what-are-you-waiting-for">
+                <div className="what-are-you-waiting-for" ref={ref}>
                     <Row align={"middle"}>
                         <Col xs={24} md={12}>
                             <h2>What are you waiting for</h2>
-                            <h2>Register now</h2>
+                            <h2 >Join the waitlist</h2>
                             <div style={{ margin: "13px 0" }}>
                                 <div>
                                     <p>Clarity gives you the blocks & components you need to</p>
@@ -130,17 +142,19 @@ export const Home = () => {
                                     </span>
                                 </div>
                             </div>
-                            <Link
-                                to="/"
-                                className="btn-primary"
-                                style={{
-                                    borderRadius: "47px",
-                                    fontSize: "16px",
-                                    marginTop: "50px",
-                                }}
-                            >
-                                Register now
-                            </Link>
+                            <div ref={ref}>
+                                <Link
+                                    to="/"
+                                    className="btn-primary"
+                                    style={{
+                                        borderRadius: "47px",
+                                        fontSize: "16px",
+                                        marginTop: "50px",
+                                    }}
+                                >
+                                    Join now
+                                </Link>
+                            </div>
                         </Col>
                         <Col xs={24} md={12} className="phone2">
                             <img src="/phone2.svg" alt="Veridux Mobile App" />
