@@ -2,14 +2,16 @@
 @import "./partials/variables";
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color: $colorDark;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: $colorDark;
 }
+
 @import "./partials/header";
 @import "./partials/bottons";
 @import "./partials/hero";
 @import "./partials/landingPage";
 @import "./partials/footer";
 @import "./partials/faqs";
+@import "./partials/home";
