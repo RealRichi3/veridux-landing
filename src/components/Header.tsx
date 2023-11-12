@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="logo">
         <img src="/Veridux.svg" alt="Veridux Logo" />
       </div>
-      <ul className="show-desktop">
+      <ul className="show-desktop navbar">
         <li>
           <Link to={"/"}>Home</Link>
         </li>
