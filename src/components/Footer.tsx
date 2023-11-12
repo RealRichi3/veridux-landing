@@ -1,6 +1,4 @@
 import {
-    FacebookFilled,
-    GithubFilled,
     InstagramFilled,
     TwitterCircleFilled,
 } from "@ant-design/icons"
