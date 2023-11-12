@@ -13,12 +13,12 @@ import { useRef } from "react"
 export const Home = () => {
     const ref = useRef<HTMLDivElement>(null)
 
-    const scrollToRef = (() => {
+    const scrollToRef = () => {
         console.log('clicked')
         if (ref.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' })
         }
-    }) as any
+    }
 
     return (
         <div className="landingPage">

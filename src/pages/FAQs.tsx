@@ -4,11 +4,20 @@ import { Header } from "../components/Header"
 import { Hero } from "../components/Hero"
 import type { CollapseProps } from "antd"
 import { Collapse } from "antd"
+import { useRef } from "react"
 
 export const FAQs = () => {
     const text = `
   coming soon
 `
+    const ref = useRef<HTMLDivElement>(null)
+
+    const scrollToRef = () => {
+        console.log('clicked')
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     const items: CollapseProps["items"] = [
         {
@@ -39,7 +48,7 @@ export const FAQs = () => {
     ]
     return (
         <div className="faqs">
-            <Header />
+            <Header scrollIntoView={scrollToRef}/>
             <Hero />
 
             <div className="faqs_inner">
