@@ -2,6 +2,7 @@ import { Col, Row } from "antd";
 import { GooglePlayStore } from "./GooglePlayStore";
 import { AppleStore } from "./AppleStore";
 import { Link } from "react-router-dom";
+import { GoodIcon } from "./GoodIcon";
 
 export const Hero = ({ scrollIntoView, origin }: { scrollIntoView?: () => void, origin: 'home' | 'faq' }) => {
     return (
@@ -12,20 +13,47 @@ export const Hero = ({ scrollIntoView, origin }: { scrollIntoView?: () => void, 
                         <h2>Welcome to Your Marketplace Management Hub</h2>
                         <h3>Empowering Sellers for </h3>
                         <h3>Ecommerce Success</h3>
-                        <p>Grow Your Business, Streamline Operations</p>
+                        <div style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    marginBottom: "1rem",
+                                }}
+                            >
+                                <GoodIcon />
+                                <span style={{ marginLeft: "15px" }}>
+                                    <b>Earn discount on purchases</b>
+                                </span>
+                            </div>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    marginBottom: "1rem",
+                                }}
+                            >
+                                <GoodIcon />
+                                <span style={{ marginLeft: "15px" }}>
+                                    <b>Earn commissions on referrals</b>
+                                </span>
+                            </div>
+                        </div>
+                        {/* <p>Grow Your Business, Streamline Operations</p> */}
+                        <p>Get notified when we launch</p>
                         {origin === 'home' ? (
                             <div onClick={scrollIntoView} className="btn-primary">
-                                Get started
+                                Join the waitlist
                             </div>
                         ) : (
                             <Link to="/" className="btn-primary">
-                                Get started
+                                Join the waitlist
                             </Link>
                         )}
-                        <div className="app-stores">
+                        {/* <div className="app-stores">
                             <GooglePlayStore />
                             <AppleStore />
-                        </div>
+                        </div> */}
                     </Col>
                     <Col xs={24} md={8} className="phone1">
                         <img src={"/phone1.svg"} alt="Veridux App" />

@@ -6,11 +6,18 @@ import { GoodIcon } from "../components/GoodIcon"
 import { QouteIcon } from "../components/QouteIcon"
 import { Link } from "react-router-dom"
 import { Footer } from "../components/Footer"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
+interface WaitListForm {
+    name: string,
+    email: string,
+    interests: string[],
+    other_interests: string,
+}
 
 export const Home = () => {
     const ref = useRef<HTMLDivElement>(null)
+    const [waitlistForm, setWaitlistForm] = useState({} as WaitListForm)
 
     const scrollToRef = () => {
         console.log('clicked')
@@ -122,24 +129,20 @@ export const Home = () => {
                                 </div>
                             </div>
                             <div style={{ marginTop: "2.5rem" }}>
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        marginBottom: "1rem",
-                                    }}
-                                >
+                                <div className="waitlist-form">
+                                    <input placeholder="Name" />
+                                    <input placeholder="Email" />
+                                    {/* Drop down of interest to pick from  */}
+                                    <input placeholder="Interest" />
+                                    <input placeholder="Other interests" />
+                                </div>
+
+                                {/* <div style={{ display: "flex", alignItems: "center" }}>
                                     <GoodIcon />
                                     <span style={{ marginLeft: "15px" }}>
-                                        <b>Start Selling Today</b>
+                                        <b>Join Veridux today</b>
                                     </span>
-                                </div>
-                                <div style={{ display: "flex", alignItems: "center" }}>
-                                    <GoodIcon />
-                                    <span style={{ marginLeft: "15px" }}>
-                                        <b>Bacome a Vendor</b>
-                                    </span>
-                                </div>
+                                </div> */}
                             </div>
                             <div ref={ref}>
                                 <Link
