@@ -1,9 +1,9 @@
-import { Col, Row } from "antd"
-import { Link } from "react-router-dom"
-import { GooglePlayStore } from "./GooglePlayStore"
-import { AppleStore } from "./AppleStore"
+import { Col, Row } from "antd";
+import { GooglePlayStore } from "./GooglePlayStore";
+import { AppleStore } from "./AppleStore";
+import { Link } from "react-router-dom";
 
-export const Hero = () => {
+export const Hero = ({ scrollIntoView, origin }: { scrollIntoView?: () => void, origin: 'home' | 'faq' }) => {
     return (
         <div className="heroSection">
             <div className="heroSection_inner">
@@ -13,9 +13,15 @@ export const Hero = () => {
                         <h3>Empowering Sellers for </h3>
                         <h3>Ecommerce Success</h3>
                         <p>Grow Your Business, Streamline Operations</p>
-                        <Link to={"/"} className="btn-primary">
-                            Get Started
-                        </Link>
+                        {origin === 'home' ? (
+                            <div onClick={scrollIntoView} className="btn-primary">
+                                Get started
+                            </div>
+                        ) : (
+                            <Link to="/" className="btn-primary">
+                                Get started
+                            </Link>
+                        )}
                         <div className="app-stores">
                             <GooglePlayStore />
                             <AppleStore />
@@ -27,5 +33,5 @@ export const Hero = () => {
                 </Row>
             </div>
         </div>
-    )
-}
+    );
+};

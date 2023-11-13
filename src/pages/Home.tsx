@@ -23,7 +23,7 @@ export const Home = () => {
         <div className="landingPage">
             <Header scrollIntoView={scrollToRef} />
             <div className="container">
-                <Hero />
+                <Hero scrollIntoView={scrollToRef} origin={'home'} />
                 <div className="why-choose-us">
                     <h2>Why choose our</h2>
                     <h2>platform?</h2>
