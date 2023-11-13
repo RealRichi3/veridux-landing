@@ -4,7 +4,7 @@ import { Hero } from "../components/Hero"
 import { Col, Row } from "antd"
 import { GoodIcon } from "../components/GoodIcon"
 import { QouteIcon } from "../components/QouteIcon"
-import { Link } from "react-router-dom"
+import { ToastContainer, toast } from "react-toast"
 import { Footer } from "../components/Footer"
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
@@ -47,11 +47,21 @@ export const Home = () => {
     const [interests, setInterests] = useState({} as Interests)
 
     const scrollToRef = () => {
-        console.log('clicked')
         if (ref.current) {
             ref.current.scrollIntoView({ behavior: 'smooth' })
         }
     }
+
+    const isFormValid = () => {
+        // Check if all required fields are filled
+        return (
+            waitlistForm.name &&
+            waitlistForm.email &&
+            waitlistForm.reg_type &&
+            waitlistForm.interests &&
+            waitlistForm.interests.length > 0
+        );
+    };
 
     const updateForm = ({ key, value }: { key: keyof WaitListForm, value: string }) => {
         if (key === 'interests') {
@@ -71,19 +81,30 @@ export const Home = () => {
         setWaitlistForm({ ...waitlistForm, [key]: value })
     }
 
+    const joinWaitlist = () => {
+        axios.post(`${SERVER_URL}/waitlist/join`, { ...waitlistForm, other_interests: [waitlistForm.other_interests], waitlist_interests: waitlistForm.interests }).then((res) => {
+            toast.success(res.data.message, {})
+            setWaitlistForm({ name: '', email: '' } as WaitListForm)
+            setTimeout(() => { window.open('/') }, 1000)
+        }).catch((err) => {
+            toast.error(err.response.data.message)
+        }).finally(() => setWaitlistForm({} as WaitListForm
+        ))
+    }
+
     useEffect(() => {
         axios.get<WaitListResponse>(`${SERVER_URL}/waitlist/interest`).then((res) => {
             const responseData = res.data.data
             const vendorsInterests = responseData.interests.filter((interest) => interest.type === 'vendor') as Interests['vendor']
             const buyersInterests = responseData.interests.filter((interest) => interest.type === 'buyer') as Interests['buyer']
 
-            console.log(vendorsInterests)
             setInterests({ vendor: vendorsInterests, buyer: buyersInterests })
         })
     }, [])
 
     return (
         <div className="landingPage">
+            <ToastContainer position="top-right" />
             <Header scrollIntoView={scrollToRef} />
             <div className="container">
                 <Hero scrollIntoView={scrollToRef} origin={'home'} />
@@ -178,8 +199,8 @@ export const Home = () => {
 
                             <div style={{ marginTop: "2.5rem" }}>
                                 <div className="waitlist-form">
-                                    <input placeholder="Name" />
-                                    <input placeholder="Email" />
+                                    <input placeholder="Name" onChange={(e) => updateForm({ key: "name", value: e.target.value })} value={waitlistForm.name} />
+                                    <input placeholder="Email" onChange={(e) => updateForm({ key: "email", value: e.target.value })} value={waitlistForm.email} />
                                     {/* Drop down of interest to pick from  */}
                                     <div className="regTypeArea">
                                         <p style={{ textAlign: 'left', width: "100%", fontSize: '18px', marginTop: 20 }}> Register as</p>
@@ -211,41 +232,36 @@ export const Home = () => {
                                         {
                                             waitlistForm.reg_type &&
                                             interests[waitlistForm.reg_type].map((interest) => (
-                                                <div className="interest" key={interest._id}>
+                                                <div className="interest" key={interest._id} onClick={() => updateForm({ key: 'interests', value: interest._id })}>
                                                     <label htmlFor={`interest_${interest._id}`}>{interest.value}</label>
                                                     <input
                                                         type="checkbox"
                                                         id={interest._id}
                                                         value={interest.value}
                                                         checked={waitlistForm.interests?.includes(interest._id) ? true : false}
-                                                        onChange={(e) => updateForm({ key: "interests", value: e.target.id })}
                                                     />
                                                 </div>
                                             ))
                                         }
                                     </div>
-                                    <input placeholder="Other interests" />
+                                    <input placeholder="Other interests" onChange={(e) => updateForm({ key: 'other_interests', value: e.target.value })} />
                                 </div>
-
-                                {/* <div style={{ display: "flex", alignItems: "center" }}>
-                                    <GoodIcon />
-                                    <span style={{ marginLeft: "15px" }}>
-                                        <b>Join Veridux today</b>
-                                    </span>
-                                </div> */}
                             </div>
                             <div ref={ref}>
-                                <Link
-                                    to="/"
+                                <button
                                     className="btn-primary"
                                     style={{
                                         borderRadius: "47px",
                                         fontSize: "16px",
                                         marginTop: "50px",
+                                        border: 0,
+                                        background: !isFormValid() ? "#E5E5E5" : "#006fcf",
                                     }}
+                                    disabled={!isFormValid()}
+                                    onClick={joinWaitlist}
                                 >
                                     Join now
-                                </Link>
+                                </button>
                             </div>
                         </Col>
                         <Col xs={24} md={12} className="phone2">
