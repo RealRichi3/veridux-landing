@@ -6,18 +6,45 @@ import { GoodIcon } from "../components/GoodIcon"
 import { QouteIcon } from "../components/QouteIcon"
 import { Link } from "react-router-dom"
 import { Footer } from "../components/Footer"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import axios from "axios"
+import { SERVER_URL } from "../constants"
 
 interface WaitListForm {
     name: string,
     email: string,
     interests: string[],
     other_interests: string,
+    reg_type: 'vendor' | 'buyer'
+}
+
+interface Interests {
+    vendor: {
+        _id: string,
+        type: 'vendor',
+        value: string
+    }[]
+    buyer: {
+        _id: string,
+        type: 'buyer',
+        value: string
+    }[]
+}
+
+interface WaitListResponse {
+    success: boolean,
+    message: string,
+    data: {
+        interests: [
+            Interests['vendor'][number] | Interests['buyer'][number]
+        ]
+    }
 }
 
 export const Home = () => {
     const ref = useRef<HTMLDivElement>(null)
     const [waitlistForm, setWaitlistForm] = useState({} as WaitListForm)
+    const [interests, setInterests] = useState({} as Interests)
 
     const scrollToRef = () => {
         console.log('clicked')
@@ -25,6 +52,22 @@ export const Home = () => {
             ref.current.scrollIntoView({ behavior: 'smooth' })
         }
     }
+
+    const updateForm = ({ key, value }: { key: keyof WaitListForm, value: string }) => {
+        console.log(interests)
+        setWaitlistForm({ ...waitlistForm, [key]: value })
+    }
+
+    useEffect(() => {
+        axios.get<WaitListResponse>(`${SERVER_URL}/waitlist/interest`).then((res) => {
+            const responseData = res.data.data
+            const vendorsInterests = responseData.interests.filter((interest) => interest.type === 'vendor') as Interests['vendor']
+            const buyersInterests = responseData.interests.filter((interest) => interest.type === 'buyer') as Interests['buyer']
+
+            console.log(vendorsInterests)
+            setInterests({ vendor: vendorsInterests, buyer: buyersInterests })
+        })
+    }, [])
 
     return (
         <div className="landingPage">
@@ -119,21 +162,46 @@ export const Home = () => {
                         <Col xs={24} md={12}>
                             <h2>What are you waiting for</h2>
                             <h2 >Join the waitlist</h2>
-                            <div style={{ margin: "13px 0" }}>
-                                <div>
-                                    <p>Clarity gives you the blocks & components you need to</p>
-                                    <p>
-                                        create a truly professional website, landing page or admin
-                                    </p>
-                                    <p>panel for your SaaS and gives the blocks.</p>
-                                </div>
-                            </div>
+                            
                             <div style={{ marginTop: "2.5rem" }}>
                                 <div className="waitlist-form">
                                     <input placeholder="Name" />
                                     <input placeholder="Email" />
                                     {/* Drop down of interest to pick from  */}
-                                    <input placeholder="Interest" />
+                                    <p style={{ textAlign: 'left', width: "100%", fontSize: '20px' }}> Register as :</p>
+                                    <div className="radio">
+                                        <label>
+                                            Vendor
+                                            <input
+                                                className="radio-button"
+                                                type="radio"
+                                                value="vendor"
+                                                checked={waitlistForm.reg_type === 'vendor'}
+                                                onChange={() => updateForm({ key: "reg_type", value: 'vendor' })}
+                                            />
+                                        </label>
+                                        <label>
+                                            Buyer
+                                            <input
+                                                className="radio-button"
+                                                type="radio"
+                                                value="Buyer"
+                                                checked={waitlistForm.reg_type === 'buyer'}
+                                                onChange={() => updateForm({ key: "reg_type", value: 'buyer' })}
+                                            />
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="dropdown">Interests </label>
+                                        <select id="dropdown" >
+                                            <option value=""></option>
+                                            {
+                                                waitlistForm.reg_type && interests[waitlistForm.reg_type].map((interest) => (
+                                                    <option key={interest._id} value={interest._id}>{interest.value}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
                                     <input placeholder="Other interests" />
                                 </div>
 
