@@ -19,7 +19,7 @@
         border: 1px solid #ccc;
         border-radius: 25px;
         padding: 0 25px;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         font-size: 16px;
         color: grey;
         outline: none;
@@ -84,10 +84,9 @@
             flex-direction: row;
             align-items: center;
             height: 45px;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: #ffff;
             color: pink;
-            // border-bottom: 1px solid #ccc;
             border-radius: 15px;
             margin-bottom: 10px;
             justify-content: space-between;
@@ -109,7 +108,7 @@
         }
 
         .head {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         label {

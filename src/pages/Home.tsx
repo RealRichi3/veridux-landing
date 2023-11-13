@@ -54,7 +54,20 @@ export const Home = () => {
     }
 
     const updateForm = ({ key, value }: { key: keyof WaitListForm, value: string }) => {
-        console.log(interests)
+        if (key === 'interests') {
+            const interests_ = waitlistForm.interests || []
+            if (interests_.includes(value)) {
+                interests_.splice(interests_.indexOf(value), 1)
+            } else {
+                interests_.push(value)
+            }
+            return setWaitlistForm({ ...waitlistForm, interests: interests_ })
+        }
+
+        if (key === 'reg_type') {
+            return setWaitlistForm({ ...waitlistForm, interests: [], [key]: value as 'buyer' | 'vendor' })
+        }
+
         setWaitlistForm({ ...waitlistForm, [key]: value })
     }
 
@@ -169,7 +182,7 @@ export const Home = () => {
                                     <input placeholder="Email" />
                                     {/* Drop down of interest to pick from  */}
                                     <div className="regTypeArea">
-                                        <p style={{ textAlign: 'left', width: "100%", fontSize: '20px', marginTop: 20 }}> Register as</p>
+                                        <p style={{ textAlign: 'left', width: "100%", fontSize: '18px', marginTop: 20 }}> Register as</p>
                                         <div className="radio">
                                             <label>
                                                 Vendor
@@ -204,7 +217,8 @@ export const Home = () => {
                                                         type="checkbox"
                                                         id={interest._id}
                                                         value={interest.value}
-                                                        onChange={(e) => handleInterestChange(e, interest._id)}
+                                                        checked={waitlistForm.interests?.includes(interest._id) ? true : false}
+                                                        onChange={(e) => updateForm({ key: "interests", value: e.target.id })}
                                                     />
                                                 </div>
                                             ))
