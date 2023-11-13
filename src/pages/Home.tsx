@@ -162,45 +162,53 @@ export const Home = () => {
                         <Col xs={24} md={12}>
                             <h2>What are you waiting for</h2>
                             <h2 >Join the waitlist</h2>
-                            
+
                             <div style={{ marginTop: "2.5rem" }}>
                                 <div className="waitlist-form">
                                     <input placeholder="Name" />
                                     <input placeholder="Email" />
                                     {/* Drop down of interest to pick from  */}
-                                    <p style={{ textAlign: 'left', width: "100%", fontSize: '20px' }}> Register as :</p>
-                                    <div className="radio">
-                                        <label>
-                                            Vendor
-                                            <input
-                                                className="radio-button"
-                                                type="radio"
-                                                value="vendor"
-                                                checked={waitlistForm.reg_type === 'vendor'}
-                                                onChange={() => updateForm({ key: "reg_type", value: 'vendor' })}
-                                            />
-                                        </label>
-                                        <label>
-                                            Buyer
-                                            <input
-                                                className="radio-button"
-                                                type="radio"
-                                                value="Buyer"
-                                                checked={waitlistForm.reg_type === 'buyer'}
-                                                onChange={() => updateForm({ key: "reg_type", value: 'buyer' })}
-                                            />
-                                        </label>
+                                    <div className="regTypeArea">
+                                        <p style={{ textAlign: 'left', width: "100%", fontSize: '20px', marginTop: 20 }}> Register as</p>
+                                        <div className="radio">
+                                            <label>
+                                                Vendor
+                                                <input
+                                                    className="radio-button"
+                                                    type="radio"
+                                                    value="vendor"
+                                                    checked={waitlistForm.reg_type === 'vendor'}
+                                                    onChange={() => updateForm({ key: "reg_type", value: 'vendor' })}
+                                                />
+                                            </label>
+                                            <label>
+                                                Buyer
+                                                <input
+                                                    className="radio-button"
+                                                    type="radio"
+                                                    value="Buyer"
+                                                    checked={waitlistForm.reg_type === 'buyer'}
+                                                    onChange={() => updateForm({ key: "reg_type", value: 'buyer' })}
+                                                />
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label htmlFor="dropdown">Interests </label>
-                                        <select id="dropdown" >
-                                            <option value=""></option>
-                                            {
-                                                waitlistForm.reg_type && interests[waitlistForm.reg_type].map((interest) => (
-                                                    <option key={interest._id} value={interest._id}>{interest.value}</option>
-                                                ))
-                                            }
-                                        </select>
+                                    <div className="interests">
+                                        <label className="head"> Interests </label>
+                                        {
+                                            waitlistForm.reg_type &&
+                                            interests[waitlistForm.reg_type].map((interest) => (
+                                                <div className="interest" key={interest._id}>
+                                                    <label htmlFor={`interest_${interest._id}`}>{interest.value}</label>
+                                                    <input
+                                                        type="checkbox"
+                                                        id={interest._id}
+                                                        value={interest.value}
+                                                        onChange={(e) => handleInterestChange(e, interest._id)}
+                                                    />
+                                                </div>
+                                            ))
+                                        }
                                     </div>
                                     <input placeholder="Other interests" />
                                 </div>

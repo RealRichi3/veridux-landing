@@ -29,32 +29,93 @@
         border-color: $colorBlue;
     }
 
-    .radio {
+    .regTypeArea {
         width: 100%;
-        padding: 10px 0;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+
+        .radio {
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            padding-left: 20px;
+
+            label {
+                font-size: 15px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 15px;
+                padding: auto 0 // justify-content: center;
+            }
+
+            .radio-button {
+                margin: 0 10px;
+                height: 30px;
+                width: 20px;
+                accent-color: $colorBlue;
+            }
+        }
     }
 
-    .radio label {
-        font-size: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-right: 15px;
-        padding: auto 0 // justify-content: center;
-    }
-
-    .radio-button {
-        margin: 0 10px;
-        height: 30px;
-        width: 20px;
-        accent-color: $colorBlue;
-    }
 
     .radio-button:checked::after {
         border: 1px solid olivedrab;
         color: pink;
+    }
+
+    .interests {
+        width: 100%;
+        border-radius: 25px;
+        // padding: 0 25px;
+        margin: 25px;
+        margin-bottom: 30px;
+        color: grey;
+        outline: none;
+        align-items: left;
+        display: flex;
+        flex-direction: column;
+
+        .interest {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 45px;
+            padding: 10px;
+            background-color: #ffff;
+            color: pink;
+            // border-bottom: 1px solid #ccc;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            justify-content: space-between;
+
+            input {
+                border: 1px solid #ccc;
+                border-radius: 25px;
+                font-size: 16px;
+                width: 20px;
+                margin: 0;
+                color: grey;
+                outline: none;
+                align-items: left;
+            }
+
+            input:focus {
+                border-color: $colorBlue;
+            }
+        }
+
+        .head {
+            font-size: 20px;
+        }
+
+        label {
+            margin: 10px 0;
+        }
+
     }
 }
 
