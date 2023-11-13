@@ -1,6 +1,4 @@
 import { Col, Row } from "antd";
-import { GooglePlayStore } from "./GooglePlayStore";
-import { AppleStore } from "./AppleStore";
 import { Link } from "react-router-dom";
 import { GoodIcon } from "./GoodIcon";
 
