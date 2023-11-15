@@ -6,6 +6,10 @@ import { Divider } from "antd"
 import { Link } from "react-router-dom"
 
 export const Footer = () => {
+    const openPdf = () => {
+        window.open('/public/terms_and_conditions.pdf', '_blank')
+    }
+
     return (
         <div className="mainFooter">
             <div className="mainFooter_inner">
@@ -13,14 +17,17 @@ export const Footer = () => {
                     <img src="/Veridux.svg" alt="Veridux Logo" />
                 </div>
                 <ul>
-                    <li>
+                    {/* <li>
                         <Link to={"/"}>Copyright</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to={"/"}>Contact</Link>
                     </li>
                     <li>
-                        <Link to={"/"}>Privacy Policy</Link>
+                        <Link onClick={openPdf} to={"/"}>Terms of Use</Link>
+                    </li>
+                    <li>
+                        <Link onClick={openPdf} to={"/"}>Privacy Policy</Link>
                     </li>
                 </ul>
                 <div className="mainFooter_icons">
