@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 
 export const Footer = () => {
     const openPdf = () => {
-        window.open('/public/terms_and_conditions.pdf', '_blank')
+        window.open('/terms_and_conditions.pdf', '_blank')
     }
 
     return (
