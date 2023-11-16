@@ -45,6 +45,7 @@ export const Home = () => {
     const ref = useRef<HTMLDivElement>(null)
     const [waitlistForm, setWaitlistForm] = useState({} as WaitListForm)
     const [interests, setInterests] = useState({} as Interests)
+    const [serverIsLoading, setServerIsLoading] = useState(true)
 
     const scrollToRef = () => {
         if (ref.current) {
@@ -93,13 +94,15 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        axios.get<WaitListResponse>(`${SERVER_URL}/waitlist/interest`).then((res) => {
-            const responseData = res.data.data
-            const vendorsInterests = responseData.interests.filter((interest) => interest.type === 'vendor') as Interests['vendor']
-            const buyersInterests = responseData.interests.filter((interest) => interest.type === 'buyer') as Interests['buyer']
+        axios.get<WaitListResponse>(`${SERVER_URL}/waitlist/interest`)
+            .then((res) => {
+                const responseData = res.data.data
+                const vendorsInterests = responseData.interests.filter((interest) => interest.type === 'vendor') as Interests['vendor']
+                const buyersInterests = responseData.interests.filter((interest) => interest.type === 'buyer') as Interests['buyer']
 
-            setInterests({ vendor: vendorsInterests, buyer: buyersInterests })
-        })
+                setInterests({ vendor: vendorsInterests, buyer: buyersInterests })
+                setServerIsLoading(false)
+            })
     }, [])
 
     return (
@@ -197,72 +200,77 @@ export const Home = () => {
                             <h2>What are you waiting for</h2>
                             <h2 >Join the waitlist</h2>
 
-                            <div style={{ marginTop: "2.5rem" }}>
-                                <div className="waitlist-form">
-                                    <input placeholder="Name" onChange={(e) => updateForm({ key: "name", value: e.target.value })} value={waitlistForm.name} />
-                                    <input placeholder="Email" onChange={(e) => updateForm({ key: "email", value: e.target.value })} value={waitlistForm.email} />
-                                    {/* Drop down of interest to pick from  */}
-                                    <div className="regTypeArea">
-                                        <p style={{ textAlign: 'left', width: "100%", fontSize: '18px', marginTop: 20 }}> Register as</p>
-                                        <div className="radio">
-                                            <label>
-                                                Supplier
-                                                <input
-                                                    className="radio-button"
-                                                    type="radio"
-                                                    value="vendor"
-                                                    checked={waitlistForm.reg_type === 'vendor'}
-                                                    onChange={() => updateForm({ key: "reg_type", value: 'vendor' })}
-                                                />
-                                            </label>
-                                            <label>
-                                                Buyer
-                                                <input
-                                                    className="radio-button"
-                                                    type="radio"
-                                                    value="Buyer"
-                                                    checked={waitlistForm.reg_type === 'buyer'}
-                                                    onChange={() => updateForm({ key: "reg_type", value: 'buyer' })}
-                                                />
-                                            </label>
+                            {serverIsLoading
+                                ? <div style={{ width: "100%", height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><div className="spinner" ></div></div>
+                                : <div>
+                                    <div style={{ marginTop: "2.5rem" }}>
+                                        <div className="waitlist-form">
+                                            <input placeholder="Name" onChange={(e) => updateForm({ key: "name", value: e.target.value })} value={waitlistForm.name} />
+                                            <input placeholder="Email" onChange={(e) => updateForm({ key: "email", value: e.target.value })} value={waitlistForm.email} />
+                                            {/* Drop down of interest to pick from  */}
+                                            <div className="regTypeArea">
+                                                <p style={{ textAlign: 'left', width: "100%", fontSize: '18px', marginTop: 20 }}> Register as</p>
+                                                <div className="radio">
+                                                    <label>
+                                                        Supplier
+                                                        <input
+                                                            className="radio-button"
+                                                            type="radio"
+                                                            value="vendor"
+                                                            checked={waitlistForm.reg_type === 'vendor'}
+                                                            onChange={() => updateForm({ key: "reg_type", value: 'vendor' })}
+                                                        />
+                                                    </label>
+                                                    <label>
+                                                        Buyer
+                                                        <input
+                                                            className="radio-button"
+                                                            type="radio"
+                                                            value="Buyer"
+                                                            checked={waitlistForm.reg_type === 'buyer'}
+                                                            onChange={() => updateForm({ key: "reg_type", value: 'buyer' })}
+                                                        />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div className="interests">
+                                                <label className="head"> Interests </label>
+                                                {
+                                                    waitlistForm.reg_type &&
+                                                    interests[waitlistForm.reg_type]?.map((interest) => (
+                                                        <div className="interest" key={interest._id} onClick={() => updateForm({ key: 'interests', value: interest._id })}>
+                                                            <label htmlFor={`interest_${interest._id}`}>{interest.value}</label>
+                                                            <input
+                                                                type="checkbox"
+                                                                id={interest._id}
+                                                                value={interest.value}
+                                                                checked={waitlistForm.interests?.includes(interest._id) ? true : false}
+                                                            />
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                            <input placeholder="Other interests" onChange={(e) => updateForm({ key: 'other_interests', value: e.target.value })} />
                                         </div>
                                     </div>
-                                    <div className="interests">
-                                        <label className="head"> Interests </label>
-                                        {
-                                            waitlistForm.reg_type &&
-                                            interests[waitlistForm.reg_type].map((interest) => (
-                                                <div className="interest" key={interest._id} onClick={() => updateForm({ key: 'interests', value: interest._id })}>
-                                                    <label htmlFor={`interest_${interest._id}`}>{interest.value}</label>
-                                                    <input
-                                                        type="checkbox"
-                                                        id={interest._id}
-                                                        value={interest.value}
-                                                        checked={waitlistForm.interests?.includes(interest._id) ? true : false}
-                                                    />
-                                                </div>
-                                            ))
-                                        }
+                                    <div ref={ref}>
+                                        <button
+                                            className="btn-primary"
+                                            style={{
+                                                borderRadius: "47px",
+                                                fontSize: "16px",
+                                                marginTop: "50px",
+                                                border: 0,
+                                                background: !isFormValid() && !serverIsLoading ? "#E5E5E5" : "#006fcf",
+                                            }}
+                                            disabled={!isFormValid()}
+                                            onClick={joinWaitlist}
+                                        >
+                                            Join now
+                                        </button>
                                     </div>
-                                    <input placeholder="Other interests" onChange={(e) => updateForm({ key: 'other_interests', value: e.target.value })} />
                                 </div>
-                            </div>
-                            <div ref={ref}>
-                                <button
-                                    className="btn-primary"
-                                    style={{
-                                        borderRadius: "47px",
-                                        fontSize: "16px",
-                                        marginTop: "50px",
-                                        border: 0,
-                                        background: !isFormValid() ? "#E5E5E5" : "#006fcf",
-                                    }}
-                                    disabled={!isFormValid()}
-                                    onClick={joinWaitlist}
-                                >
-                                    Join now
-                                </button>
-                            </div>
+                            }
                         </Col>
                         <Col xs={24} md={12} className="phone2">
                             <img src="/phone2.svg" alt="Veridux Mobile App" />
