@@ -116,7 +116,7 @@ export const Home = () => {
                             <div className="vendor-admin-item" onClick={scrollToRef}>
                                 <GoodIcon />
                                 <span>
-                                    <b>Vendors:</b> Effortless Product Management
+                                    <b>Suppliers:</b> Effortless Product Management
                                 </span>
                             </div>
                         </Col>
@@ -132,7 +132,7 @@ export const Home = () => {
                             <div className="vendor-admin-item">
                                 <GoodIcon />
                                 <span>
-                                    <b>Vendors:</b> Reach a wider Audience
+                                    <b>Suppliers:</b> Reach a wider Audience
                                 </span>
                             </div>
                         </Col>
@@ -148,7 +148,7 @@ export const Home = () => {
                             <div className="vendor-admin-item">
                                 <GoodIcon />
                                 <span>
-                                    <b>Vendors:</b> Secure Payment Handling
+                                    <b>Suppliers:</b> Secure Payment Handling
                                 </span>
                             </div>
                         </Col>
@@ -206,7 +206,7 @@ export const Home = () => {
                                         <p style={{ textAlign: 'left', width: "100%", fontSize: '18px', marginTop: 20 }}> Register as</p>
                                         <div className="radio">
                                             <label>
-                                                Vendor
+                                                Supplier
                                                 <input
                                                     className="radio-button"
                                                     type="radio"
