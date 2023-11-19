@@ -232,7 +232,7 @@ export const Home = () => {
                                                         />
                                                     </label>
                                                 </div>
-                                            </div>
+                                             </div>
                                             <div className="interests">
                                                 <label className="head"> Interests </label>
                                                 {
