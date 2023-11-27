@@ -18,45 +18,48 @@ const PrivacyPolicy = () => {
     return (
         <div className="faqs">
             <Header />
-            <div className="container"></div>
-            <Document file={"/privacy.pdf"} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={pageNumber} />
-            </Document>
-            <p
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                    margin: "10px",
-                }}
-            >
-                Page {pageNumber} of {numPages || 1}
-            </p>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "100%",
-                }}
-            >
-                <Button
-                    style={{ width: "10rem", margin: "10px" }}
-                    onClick={() => setPageNumber(pageNumber - 1)}
-                    disabled={pageNumber <= 1}
+            <div className="container" style={{ paddingTop: '40px' }}>
+                <h1 style={{ width: '100%', textAlign: 'center', margin: '20px'}}>Privacy Policy</h1>
+                <Document file={"/privacy.pdf"} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page pageNumber={pageNumber} />
+                </Document>
+                <p
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        margin: "10px",
+                    }}
                 >
-                    Previous
-                </Button>
-                <Button
-                    style={{ width: "10rem", margin: "10px" }}
-                    onClick={() => setPageNumber(pageNumber + 1)}
-                    disabled={pageNumber >= (numPages || 1)}
+                    Page {pageNumber} of {numPages || 1}
+                </p>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                    }}
                 >
-                    Next
-                </Button>
+                    <Button
+                        style={{ width: "10rem", margin: "10px" }}
+                        onClick={() => setPageNumber(pageNumber - 1)}
+                        disabled={pageNumber <= 1}
+                    >
+                        Previous
+                    </Button>
+                    <Button
+                        style={{ width: "10rem", margin: "10px" }}
+                        onClick={() => setPageNumber(pageNumber + 1)}
+                        disabled={pageNumber >= (numPages || 1)}
+                    >
+                        Next
+                    </Button>
+                </div>
+
             </div>
 
             <Footer />
