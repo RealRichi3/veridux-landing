@@ -6,10 +6,6 @@ import { Divider } from "antd"
 import { Link } from "react-router-dom"
 
 export const Footer = () => {
-    const openPdf = () => {
-        window.open('/terms_and_conditions.pdf', '_blank')
-    }
-
     return (
         <div className="mainFooter">
             <div className="mainFooter_inner">
@@ -24,10 +20,10 @@ export const Footer = () => {
                         <Link to={"/"}>Contact</Link>
                     </li>
                     <li>
-                        <Link onClick={openPdf} to={"/"}>Terms of Use</Link>
+                        <Link to={"/terms"}>Terms of Use</Link>
                     </li>
                     <li>
-                        <Link onClick={openPdf} to={"/"}>Privacy Policy</Link>
+                        <Link to={"/privacy"}>Privacy Policy</Link>
                     </li>
                 </ul>
                 <div className="mainFooter_icons">

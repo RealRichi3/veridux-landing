@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Drawer } from "antd"
 
-export const Header = ({ scrollIntoView }: { scrollIntoView: () => void }) => {
+export const Header = ({ scrollIntoView }: { scrollIntoView?: () => void }) => {
     const [showDrawer, setShowDrawer] = useState(false)
     return (
         <div className="mainHeader">
