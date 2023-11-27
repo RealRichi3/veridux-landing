@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
     return (
         <div className="faqs">
             <Header />
-            <div className="container" style={{ paddingTop: '40px', height: '100%', maxWidth: '800px', margin: '0 auto' }}>
+            <div className="container" style={{ paddingTop: '40px', height: '100%', maxWidth: '800px', minHeight: '1500px' }}>
                 <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Privacy Policy</h1>
                 <div style={{ overflowX: 'auto' }}>
                     <Document file={"/privacy.pdf"} onLoadSuccess={onDocumentLoadSuccess}>

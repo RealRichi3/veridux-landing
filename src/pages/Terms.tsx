@@ -18,7 +18,7 @@ const Terms = () => {
     return (
         <div className="faqs">
             <Header />
-            <div className="container" style={{ paddingTop: '40px', height: '100%', maxWidth: '800px', margin: '0 auto' }}>
+            <div className="container" style={{ paddingTop: '40px', height: '100%', maxWidth: '800px', margin: '0 auto',  minHeight: '1500px'  }}>
                 <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Terms and Condition</h1>
                 <div style={{ overflowX: 'auto' }}>
                     <Document file={"/terms_and_condition.pdf"} onLoadSuccess={onDocumentLoadSuccess}>
