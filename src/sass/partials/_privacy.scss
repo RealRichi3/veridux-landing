@@ -1,6 +1,18 @@
-.react-pdf__Page__canvas {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+.privacy-policy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.privacy-policy-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.privacy-policy-intro {
+    margin-bottom: 20px;
+}
+
+.subsection {
+    margin-bottom: 20px;
 }
