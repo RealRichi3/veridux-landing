@@ -15,7 +15,7 @@ const AppStore = () => {
 function App() {
   return (
     <>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/faqs" element={<FAQs />} />
@@ -23,7 +23,10 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <div className="bg-blue-500 text-pink-700 ">
+        this is a boy
+      </div>
     </>
   );
 }
