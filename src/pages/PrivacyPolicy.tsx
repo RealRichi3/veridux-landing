@@ -2,13 +2,16 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <div className="text-[#6A6B6C]">
       <header className="bg-[#EBF3FB] px-10 py-7 text-center">
-        <h2 className="w-full rounded-md bg-[#006FCF] flex justify-center items-center h-20 md:h-[218px] text-white">
+        <h2 className="flex h-20 w-full items-center justify-center rounded-md bg-[#006FCF] text-white md:h-36 lg:h-[218px]">
           PRIVACY POLICY
         </h2>
       </header>
-      <section aria-labelledby="privacy policy" className="bg-white p-5 md:p-10 lg:p-20">
+      <section
+        aria-labelledby="privacy policy"
+        className="bg-white p-5 md:p-10 lg:p-20"
+      >
         <div className="">
-          <h3 className="text-[#006FCF] text-3xl">Privacy Policy</h3>
+          <h3 className="text-3xl text-[#006FCF]">Privacy Policy</h3>
           <p className="faq-text mb-5">
             Welcome to Veridux's Privacy Policy. This document outlines how
             Veridux ("we", "us", or "our") collects, uses, discloses, and
@@ -43,7 +46,7 @@ const PrivacyPolicy: React.FC = () => {
                 our services
               </p>
             </div>
-            <div className="my-5 faq-text">
+            <div className="faq-text my-5">
               <p className="mb-5">b. Usage Information:</p>
               {/* <p className="mb-0">When you register an account, place an order, or interact with our website, we may collect personal information such as:</p> */}
               <ul className="list-inside list-disc">
@@ -64,7 +67,7 @@ const PrivacyPolicy: React.FC = () => {
               </p>
             </div>
 
-            <div className="mb-10 faq-text">
+            <div className="faq-text mb-10">
               <p className="my-5">c. Cookies and Similar Technologies:</p>
               <p>
                 We may use cookies, web beacons, and similar technologies to
@@ -77,11 +80,9 @@ const PrivacyPolicy: React.FC = () => {
             </div>
           </div>
 
-          <div className="mb-10 faq-text">
-            <h3 className="faq-header">
-              2. How We Use Your Information:
-            </h3>
-            <p className="mb-5 faq-text">
+          <div className="faq-text mb-10">
+            <h3 className="faq-header">2. How We Use Your Information:</h3>
+            <p className="faq-text mb-5">
               We use the information we collect for various purposes including:
             </p>
             <ul className="list-inside list-disc">
@@ -97,11 +98,11 @@ const PrivacyPolicy: React.FC = () => {
             </ul>
           </div>
 
-          <div className="mb-10 faq-text">
+          <div className="faq-text mb-10">
             <h3 className="faq-header">
               3. Information Sharing and Disclosure:
             </h3>
-            <p className="mb-5 faq-text">
+            <p className="faq-text mb-5">
               We may share your information with third parties under the
               following circumstances:
             </p>
@@ -161,9 +162,7 @@ const PrivacyPolicy: React.FC = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="faq-header">
-              7. Updates to this Privacy Policy:
-            </h3>
+            <h3 className="faq-header">7. Updates to this Privacy Policy:</h3>
             <p className="faq-text">
               We may update this Privacy Policy from time to time to reflect
               changes in our practices or legal requirements. We will notify you
@@ -182,7 +181,8 @@ const PrivacyPolicy: React.FC = () => {
                 href="mailto:contact@veridux.com"
                 className="text-[#006FcF] underline hover:no-underline"
               >
-                {" "}contact@veridux.com
+                {" "}
+                contact@veridux.com
               </a>
             </p>
           </div>

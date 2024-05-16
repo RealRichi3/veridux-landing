@@ -2,14 +2,19 @@ const TermsAndConditions: React.FC = () => {
   return (
     <div>
       <header className="bg-[#EBF3FB] px-10 py-7 text-center">
-        <h2 className="w-full rounded-md bg-[#006FCF] text-center text-white">
+        <h2 className="flex h-20 w-full items-center justify-center rounded-md bg-[#006FCF] text-white md:h-36 lg:h-[218px]">
           TERMS & CONDITIONS
         </h2>
       </header>
-      <section aria-labelledby="terms and conditions" className="bg-white">
+      <section
+        aria-labelledby="terms and conditions"
+        className="bg-white p-5 md:p-10 lg:p-20"
+      >
         <div>
-          <h3 className="text-[#006FCF]">Veridux Terms and Conditions</h3>
-          <p className="text-[#6A6B6C]">
+          <h3 className="text-3xl text-[#006FCF] mb-5">
+            Veridux Terms and Conditions
+          </h3>
+          <p className="text-[#6A6B6C] faq-text">
             Welcome to Veridux! These Terms and Conditions ("Terms") govern your
             use of the Veridux website ("Site") and services ("Services"). By
             accessing or using the Site or Services, you agree to be bound by
@@ -19,16 +24,13 @@ const TermsAndConditions: React.FC = () => {
         </div>
         {termsAndConditions.map((condition, index) => (
           <div className="mb-6">
-            <h3 className="mb-4 text-[#006FCF]">
+            <h3 className="mb-4 text-[#006FCF] faq-header">
               {index + 1}. {condition.title}:
             </h3>
-            <p className="text-[#6A6B6C]">{condition.paragraph}</p>
+            <p className="text-[#6A6B6C] faq-text">{condition.paragraph}</p>
           </div>
         ))}
       </section>
-      <footer>
-        <img src="/src/assets/footer-frame.png" alt="app store image" />
-      </footer>
     </div>
   );
 };
