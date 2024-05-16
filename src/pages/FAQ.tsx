@@ -12,35 +12,51 @@ const FAQ: React.FC = () => {
     <div>
       <section
         aria-labelledby="FAQ"
-        className="grid grid-cols-1 bg-[#EBF3FB] md:grid-cols-12"
+        className="flex flex-col items-center bg-[#EBF3FB] py-10 max-sm:px-5 md:flex-row md:justify-center md:py-20 md:pl-20 "
       >
-        <div className="md:col-span-4 lg:col-span-6">
-          <h2 className="font-semibold text-black">Explore Veridux FAQ</h2>
-          <p className="text-[#6A6B6C]">
+        <div className="max-w-[500px] ">
+          <h2 className="mb-4 text-3xl font-semibold text-black md:text-5xl">
+            Explore Veridux FAQ
+          </h2>
+          <p className="text-2xl text-[#6A6B6C] max-sm:mb-4">
             We're here to help! Contact us for support, inquiries, or to share
             your feedback.
           </p>
         </div>
         <div className="md:col-span-8 lg:col-span-6">
-          <img src="/src/assets/faq.svg" alt="image of application dashboard" />
+          <img
+            src="/src/assets/faq.svg"
+            alt="image of application dashboard"
+            className="h-[200px] md:h-[400px]"
+          />
         </div>
       </section>
-      <main aria-labelledby="frequently asked questions">
-        <h1 className="font-semibold">Frequently Asked Questions</h1>
-        <p>Some of the questions you have in mind has been answered below.</p>
+      <main aria-labelledby="frequently asked questions" className=" my-10">
+        <h1 className="text-center text-2xl  md:text-[40px] font-semibold text-[#2A2B4A]">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-center text-[20p] text-secondary">
+          Some of the questions you have in mind has been answered below.
+        </p>
 
-        <div>
+        <div className="mt-10 max-lg:mx-10 max-md:mx-5">
           {questions.map((question, index) => (
             // <div className= {`border-2 rounded-md py-2 ${isOpen? "border-[#006FCF]" : border-[#6A6B6C]}  `}>
-            <div className={`border-2 rounded-md py-2 ${isOpen ? 'border-[#006FCF]' : 'border-[#6A6B6C]'}`} onClick={toggleOpen}>
-
-              <div key={index} className="flex justify-between">
-                <p>{question.title}</p>
-                <button>
+            <div
+              className={`mx-auto mb-5 max-w-[950px]  rounded-md border-2 py-2 max-md:px-5 ${isOpen ? "border-[#006FCF]" : "border-[#6A6B6C]"}`}
+              onClick={toggleOpen}
+            >
+              <div key={index} className="flex  justify-between py-5 md:px-10">
+                <p className="mb5 text-xl md:text-2xl text-[#2A2B4A]">{question.title}</p>
+                <button className="text-[#2A2B4A]">
                   <IoIosArrowUp />
                 </button>
               </div>
-             {isOpen && <p>{question.paragraph}</p>}
+              {isOpen && (
+                <p className="mx-auto my-4 max-w-[860px] text-lg md:text-xl text-secondary max-lg:px-10 max-md:px-5">
+                  {question.paragraph}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -58,48 +74,21 @@ const questions = [
       'To create an account on Veridux, simply click on the "Sign Up" button located at the top right corner of the homepage. Follow the prompts to enter your information and create your account ',
     id: 1,
   },
-  {
-    title: "Is it safe to make transactions on Veridux?",
-    paragraph:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
-    id: 2,
-  },
+
   {
     title: "Can i pay my bills on Veridux?",
     paragraph:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
     id: 3,
   },
-  {
-    title: "How do i purchase airtime and data on Veridux?",
-    paragraph:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
-    id: 4,
-  },
+
   {
     title: "Do you offer discounts or promotions?",
     paragraph:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
     id: 5,
   },
-  {
-    title: "What is your return policy?",
-    paragraph:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
-    id: 6,
-  },
-  {
-    title: "How do i reset my password?",
-    paragraph:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
-    id: 7,
-  },
-  {
-    title: "How long does it take for my bill to be processed?",
-    paragraph:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit necessitatibus omnis architecto, neque dolores adipisci tenetur illum, debitis numquam officiis reprehenderit explicabo veritatis laudantium facilis.",
-    id: 8,
-  },
+
   {
     title: "Can i track my transaction history on Veridux?",
     paragraph:

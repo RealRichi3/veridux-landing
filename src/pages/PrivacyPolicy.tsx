@@ -11,7 +11,7 @@ const PrivacyPolicy: React.FC = () => {
         className="mx-auto max-w-[1600px] bg-white p-5 md:p-10 lg:p-20"
       >
         <div className="">
-          <h3 className="text-3xl text-[#006FCF]">Privacy Policy</h3>
+          <h3 className="text-3xl text-[#006FCF] mb-10">Privacy Policy</h3>
           <p className="faq-text mb-5">
             Welcome to Veridux's Privacy Policy. This document outlines how
             Veridux ("we", "us", or "our") collects, uses, discloses, and
@@ -28,10 +28,10 @@ const PrivacyPolicy: React.FC = () => {
             </p>
             <div className="faq-text">
               <p className="my-5">a. Personal Information:</p>
-              <ul className="list-inside list-disc">
+              <ul className="list-inside list-disc ml-5">
                 When you register an account, place an order, or interact with
                 our website, we may collect personal information such as:
-                <li>your name</li>
+                <li>Your name</li>
                 <li>Email address</li>
                 <li>Postal address</li>
                 <li>Phone number</li>
@@ -48,7 +48,7 @@ const PrivacyPolicy: React.FC = () => {
             <div className="faq-text my-5">
               <p className="mb-5">b. Usage Information:</p>
               {/* <p className="mb-0">When you register an account, place an order, or interact with our website, we may collect personal information such as:</p> */}
-              <ul className="list-inside list-disc">
+              <ul className="list-inside list-disc ml-5">
                 We automatically collect certain information about your
                 interactions with our website and services, including:
                 <li>IP address</li>
@@ -84,7 +84,7 @@ const PrivacyPolicy: React.FC = () => {
             <p className="faq-text mb-5">
               We use the information we collect for various purposes including:
             </p>
-            <ul className="list-inside list-disc">
+            <ul className="list-inside list-disc ml-5">
               <li>Providing and managing our services</li>
               <li>Processing orders and transactions</li>
               <li>
@@ -105,7 +105,7 @@ const PrivacyPolicy: React.FC = () => {
               We may share your information with third parties under the
               following circumstances:
             </p>
-            <ul className="list-inside list-disc">
+            <ul className="list-inside list-disc ml-5">
               <li>
                 Service Providers: We may share your information with trusted
                 third-party service providers who assist us in providing and

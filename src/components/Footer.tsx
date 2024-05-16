@@ -11,9 +11,11 @@ const year = date.getFullYear();
 const Footer: React.FC = () => {
   return (
     <footer className="flex flex-col ">
-      <div className="hidden w-full  bg-blue-300 px-20 py-10 xl:block">
+      <div className="hidden w-full z-20  bg-blue-300 px-20 py-10 xl:block">
+        {/* <img src="/src/assets/footer-circle-top.svg" className="relative left-[400px] top-[212px]" alt="" /> */}
         <div className="mx-auto grid max-w-[1600px] items-center gap-10 rounded-2xl bg-primary px-20 lg:grid-cols-2">
           <div className="">
+
             <p className="mb-5 max-w-[400px] text-4xl font-semibold text-white">
               Download Veridux App on various platforms
             </p>

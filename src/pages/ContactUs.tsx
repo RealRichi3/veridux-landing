@@ -8,11 +8,11 @@ const ContactUs: React.FC = () => {
         aria-labelledby="contact us"
         className="flex flex-col md:flex-row items-center md:justify-center bg-[#EBF3FB] md:py-20 md:pl-20 py-10 max-sm:px-5 "
       >
-        <div className="l max-w-[500px] ">
+        <div className="max-w-[500px] ">
           <h2 className="mb-4 text-3xl md:text-5xl font-semibold text-black">
             Get in Touch with Veridux
           </h2>
-          <p className="text-2xl text-[#6A6B6C] max-sm:mb-4">
+          <p className="text-2xl text-[#6A6B6C] max-md:mb-4">
             We're here to help! Contact us for support, inquiries, or to share
             your feedback.
           </p>
@@ -21,7 +21,7 @@ const ContactUs: React.FC = () => {
           <img
             src="/src/assets/contact-us.svg"
             alt="image of purchase item"
-            className="h-[400px]"
+            className="md:h-[400px] h-[200px]"
           />
         </div>
       </section>
