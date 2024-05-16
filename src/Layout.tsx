@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 const Layout: React.FC = () => {
   return (
-    <div>
+    <div className="l font-sans">
       <Header />
       <main className="w-full">
         <Outlet />

@@ -14,7 +14,7 @@ const TermsAndConditions: React.FC = () => {
           <h3 className="text-3xl text-[#006FCF] mb-5">
             Veridux Terms and Conditions
           </h3>
-          <p className="text-[#6A6B6C] faq-text">
+          <p className="text-[#6A6B6C] faq-text mb-5">
             Welcome to Veridux! These Terms and Conditions ("Terms") govern your
             use of the Veridux website ("Site") and services ("Services"). By
             accessing or using the Site or Services, you agree to be bound by

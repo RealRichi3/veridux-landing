@@ -6,7 +6,7 @@ const ContactUs: React.FC = () => {
     <div>
       <section
         aria-labelledby="contact us"
-        className="flex flex-col md:flex-row items-center justify-center bg-[#EBF3FB] md:py-20 md:pl-20 py-10 max-sm:px-5"
+        className="flex flex-col md:flex-row items-center md:justify-center bg-[#EBF3FB] md:py-20 md:pl-20 py-10 max-sm:px-5 "
       >
         <div className="l max-w-[500px] ">
           <h2 className="mb-4 text-3xl md:text-5xl font-semibold text-black">
@@ -29,7 +29,7 @@ const ContactUs: React.FC = () => {
         className="cursor-pointer  bg-white text-center py-10"
         onSubmit={handleSubmit}
       >
-        <h2 className="md:text-[40px] text-2xl font-medium text-[#2A2B4A]">Contact Us</h2>
+        <h2 className="md:text-[40px] text-2xl font-medium mb-5 text-[#2A2B4A]">Contact Us</h2>
         <p className="text-[#2A2B4A] mb-5">
           Feel free to contact us anytime, we will get back to you as soon as we
           can.

@@ -11,6 +11,9 @@ export default {
         secondary: "#6A6B6C",
         tertiary: "#DDEBF8",
       },
+      fontFamily : {
+        sans : ['"Open Sans"', 'sans-serif']
+      }
     },
   },
   plugins: [],

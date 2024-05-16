@@ -37,7 +37,7 @@ const Header: React.FC = () => {
           </li>
         </ul>
 
-        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white lg:block">
+        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white lg:block hover:bg-blue-400 duration-300">
           Login / Sign Up
         </button>
       </header>
