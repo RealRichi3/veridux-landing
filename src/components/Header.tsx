@@ -19,25 +19,52 @@ const Header: React.FC = () => {
         </div>
         <ul className="hidden flex-row justify-between gap-6 text-secondary lg:flex">
           <li>
-            <NavLink className="border-b-4 border-b-primary pb-2" to="/">
+            {/* <NavLink className="border-b-4 border-b-primary pb-2" to="/">
+              Home
+            </NavLink> */}
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="/"
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="contact-us">Contact Us</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="contact-us"
+            >
+              Contact Us
+            </NavLink>
           </li>
           <li>
-            <NavLink to="FAQ">FAQ</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="FAQ"
+            >
+              FAQ
+            </NavLink>
           </li>
           <li>
-            <NavLink to="privacy-policy">Privacy Policy</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="privacy-policy"
+            >
+              Privacy Policy
+            </NavLink>
           </li>
-          <li>
-            {/* <NavLink to="t&c">Terms & Conditions</NavLink> */}
-          </li>
+          <li>{/* <NavLink to="t&c">Terms & Conditions</NavLink> */}</li>
         </ul>
 
-        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white lg:block hover:bg-blue-400 duration-300">
+        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400 lg:block">
           Login / Sign Up
         </button>
       </header>
@@ -46,29 +73,55 @@ const Header: React.FC = () => {
           <li>
             <NavLink
               onClick={() => setOpenMenu(false)}
-              className="border-b-4 border-b-primary pb-2"
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
               to="/"
             >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpenMenu(false)} to="contact-us">
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="contact-us"
+            >
               Contact Us
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpenMenu(false)} to="FAQ">
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="FAQ"
+            >
               FAQ
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpenMenu(false)} to="privacy-policy">
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="privacy-policy"
+            >
               Privacy Policy
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpenMenu(false)} to="t&c">
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="t&c"
+            >
               Terms & Conditions
             </NavLink>
           </li>
