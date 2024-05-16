@@ -22,7 +22,7 @@ const FAQ: React.FC = () => {
           </p>
         </div>
         <div className="md:col-span-8 lg:col-span-6">
-          <img src="/src/assets/FAQ.png" alt="image of application dashboard" />
+          <img src="/src/assets/faq.svg" alt="image of application dashboard" />
         </div>
       </section>
       <main aria-labelledby="frequently asked questions">
