@@ -4,9 +4,9 @@ import Footer from "./components/Footer";
 
 const Layout: React.FC = () => {
   return (
-    <div className="l font-sans">
+    <div className="font-sans">
       <Header />
-      <main className="w-full max-w-[1600px] bg-white mx-auto">
+      <main className="w-full bg-white mx-auto">
         <Outlet />
       </main>
 

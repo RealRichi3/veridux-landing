@@ -1,102 +1,103 @@
 const HomePage: React.FC = () => {
   return (
     <div className="bg-[#F9F9F9]">
-      <section
-        aria-labelledby="app-intro"
-        className="flex flex-col  items-center bg-tertiary px-5 text-center  max-sm:py-10 md:px-20  md:pt-28"
-      >
-        <h2 className="max-w-[700px] text-2xl font-bold text-black md:text-5xl">
-          Experience Excellence with Veridux's Multi-Service Platform
-        </h2>
-        <h4 className="my-3 max-w-[700px] text-sm text-[#FF9900] md:text-[20px]">
-          Welcome to Veridux, where innovation meets versatility. Our platform
-          offers a wide range of services, including marketplace management,
-          flight booking, bill payment, airtime top-up, and more.
-        </h4>
-        <div className="mb-10 flex justify-center gap-10">
-          <a href="">
-            <img
-              src="/src/assets/google-play.png"
-              alt="google playstore image"
-            />
-          </a>
-          <a href="">
-            <img src="/src/assets/apple-store.png" alt="IOS store image" />
-          </a>
-        </div>
-        <img src="/src/assets/app-intro-image.png" alt="app-image" />
-      </section>
+      <div className="bg-tertiary">
+        <section
+          aria-labelledby="app-intro"
+          className="mx-auto  flex max-w-[1600px] flex-col items-center  bg-tertiary px-5 text-center max-sm:py-10 md:px-20  md:pt-28"
+        >
+          <div></div>
+          <h2 className="max-w-[700px] text-center text-2xl font-bold text-black md:text-5xl">
+            Experience Excellence with Veridux's Multi-Service Platform
+          </h2>
+          <h4 className="my-3 max-w-[700px] text-center text-sm text-[#FF9900] md:text-[20px]">
+            Welcome to Veridux, where innovation meets versatility. Our platform
+            offers a wide range of services, including marketplace management,
+            flight booking, bill payment, airtime top-up, and more.
+          </h4>
+          <div className="mb-10 flex justify-center gap-10">
+            <a href="">
+              <img
+                src="/src/assets/google-play.png"
+                alt="google playstore image"
+              />
+            </a>
+            <a href="">
+              <img src="/src/assets/apple-store.png" alt="IOS store image" />
+            </a>
+          </div>
+          <img src="/src/assets/app-intro-image.png" alt="app-image" />
+        </section>
+      </div>
+
       <section
         aria-labelledby="our-partnerships"
-        className="flex h-32 md:h-60 flex-col justify-center bg-[#006FCF] md:px-20"
+        className="flex h-32 flex-col justify-center bg-[#006FCF] md:h-60 md:px-20"
       >
-        <p className="text-center text-xl font-semibold text-white md:text-3xl">
-          Our Partnerships
-        </p>
-        <div className="flex flex-row md:flex-row md:justify-center">
-          <img
-            src="/src/assets/sponsorship-S.png"
-            alt="logo"
-            // width="180px"
-            // height="94px"
-            className="md:h-[94px] md:w-[180px] w-[70px]"
-          />
-          <img
-            src="/src/assets/sponsorship-team-apt.png"
-            alt="team-apt-logo"
-            // width="180px"
-            // height="94px"
-            className="md:h-[94px] md:w-[180px] w-[70px]"
-          />
-          <img
-            src="/src/assets/sponsorship-alpha.png"
-            alt="alpha-logo"
-            // width="180px"
-            // height="94px"
-            className="md:h-[94px] md:w-[180px] w-[70px]"
-          />
-          <img
-            src="/src/assets/sponsorship-busha.png"
-            alt="busha-logo"
-            // width="180px"
-            // height="94px"
-            className="md:h-[94px] md:w-[180px] w-[70px]"
-          />
-        </div>
-      </section>
-      <section
-        aria-labelledby="unique-features"
-        className="bg-white px-5 py-10 md:px-20 xl:px-32"
-      >
-        <p className="text-center text-3xl font-[500]  text-black">
-          What Sets Us Apart
-        </p>
-        <div className="mt-10 grid grid-cols-1 items-center gap-10 bg-white lg:grid-cols-2">
-          <div className="flex items-center justify-center rounded-xl bg-[#DDEBF8]">
-            <img src="/src/assets/top-up.png" alt="top-up-image" />
-          </div>
-          <div>
-            <h3 className="text-[30px] font-[500] text-black">
-              Seamless Integration
-            </h3>
-            <p className="text-lg font-normal text-secondary">
-              Connecting your needs effortlessly, ensuring you are satisfied and
-              comfortable.
-            </p>
-            <ul className="list-inside list-disc text-[16px] font-normal text-[#FF9900]">
-              <li>Access all services in one place.</li>
-              <li>Enjoy easy navigation and transactions.</li>
-              <li>Switch services seamlessly without disruptions.</li>
-            </ul>
+        <div className="mx-auto max-w-[1600px]">
+          <p className="text-center text-xl font-semibold text-white md:text-3xl">
+            Our Partnerships
+          </p>
+          <div className="flex flex-row md:flex-row md:justify-center">
+            <img
+              src="/src/assets/sponsorship-S.png"
+              alt="logo"
+              className="w-[70px] md:h-[94px] md:w-[180px]"
+            />
+            <img
+              src="/src/assets/sponsorship-team-apt.png"
+              alt="team-apt-logo"
+              className="w-[70px] md:h-[94px] md:w-[180px]"
+            />
+            <img
+              src="/src/assets/sponsorship-alpha.png"
+              alt="alpha-logo"
+              className="w-[70px] md:h-[94px] md:w-[180px]"
+            />
+            <img
+              src="/src/assets/sponsorship-busha.png"
+              alt="busha-logo"
+              className="w-[70px] md:h-[94px] md:w-[180px]"
+            />
           </div>
         </div>
       </section>
+
+      <div className="bg-white">
+        <section
+          aria-labelledby="unique-features"
+          className="mx-auto max-w-[1600px] bg-white px-5 py-10 md:px-20 xl:px-32"
+        >
+          <p className="text-center text-3xl font-[500]  text-black">
+            What Sets Us Apart
+          </p>
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 bg-white lg:grid-cols-2">
+            <div className="flex items-center justify-center rounded-xl bg-[#DDEBF8]">
+              <img src="/src/assets/top-up.png" alt="top-up-image" />
+            </div>
+            <div>
+              <h3 className="text-[30px] font-[500] text-black">
+                Seamless Integration
+              </h3>
+              <p className="text-lg font-normal text-secondary">
+                Connecting your needs effortlessly, ensuring you are satisfied
+                and comfortable.
+              </p>
+              <ul className="list-inside list-disc text-[16px] font-normal text-[#FF9900]">
+                <li>Access all services in one place.</li>
+                <li>Enjoy easy navigation and transactions.</li>
+                <li>Switch services seamlessly without disruptions.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
       <section
         aria-labelledby="services"
-        className="grid grid-cols-1 gap-10 bg-[#F9F9F9] px-5 py-10 md:grid-cols-2 md:px-20 xl:grid-cols-3 xl:px-32 "
+        className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 bg-[#F9F9F9] px-5 py-10 md:grid-cols-2 md:px-20 xl:grid-cols-3 xl:px-32"
       >
         {servicesArray.map((service, index) => (
-          <div key={index} className="pt-5 xl:pt-10">
+          <div key={index} className="pt-5 xl:pt-10 ">
             <div className="flex h-[400px] justify-center rounded-3xl bg-tertiary pt-10">
               <img src={service.image} alt={service.alt} height="300px" />
             </div>
@@ -114,7 +115,7 @@ const HomePage: React.FC = () => {
       </section>
       <section
         aria-labelledby="reviews"
-        className="bg-white px-5 py-10 md:px-20 md:py-20 xl:px-32"
+        className="mx-auto max-w-[1600px] bg-white px-5 py-10 md:px-20 md:py-20 xl:px-32"
       >
         <h3 className="text-center text-2xl font-normal text-[#2A2B4A]">
           Our Testimonials
