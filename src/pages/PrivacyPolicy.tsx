@@ -1,98 +1,198 @@
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { ReactNode } from "react";
-import 'react-pdf/dist/Page/TextLayer.css';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-
-const PrivacyPolicy = () => {
-    return (
-        <div className="faqs">
-            <Header />
-            <div className="container" style={{ paddingTop: '40px', height: '100%', maxWidth: '800px', margin: '0 auto' }}>
-                <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Privacy policy</h1>
-                <div style={{ overflowY: 'auto', maxHeight: '1000px', marginBottom: '50px' }}>
-                    <div className="privacy-policy-container">
-                        <p className="privacy-policy-intro">
-                            Welcome to VeriduxPay, an App provided by Veridux, where we prioritize the security and privacy of your personal information. This comprehensive Privacy Policy is designed to elucidate how we collect, employ, share, and safeguard your sensitive data when you engage with our mobile application.
-                        </p>
-
-                        <Section title="User Agreement" >
-                            <p>By using our app, you explicitly indicate your acceptance and agreement with the terms stipulated in this Privacy Policy.</p>
-                        </Section>
-
-                        <Section title="Collection of Personal Information" >
-                            <ul>
-                                <li>Email: We gather your email address to facilitate effective communication.</li>
-                                <li>Name: Your name is collected to personalize your interactions within the app.</li>
-                                <li>Phone Numbers: Essential for account verification and communication.</li>
-                                <li>Bank Verification Number (BVN): Collected for identity verification and robust fraud prevention measures.</li>
-                                <li>Identification Documents: Specific documents are gathered to verify identity and fortify our fraud protection mechanisms.</li>
-                            </ul>
-                        </Section>
-
-                        <Section title="Usage Data" >
-                            <p>We may collect data on your interactions with our app, including usage patterns, preferences, and interactions.</p>
-                        </Section>
-
-                        <Section title="How We Use Your Information" >
-                            <ul>
-                                <li>Identity Verification: Ensuring the security and authenticity of your account.</li>
-                                <li>Fraud Protection: Detecting and preventing fraudulent activities.</li>
-                                <li>Communication: Sending crucial information, updates, and notifications.</li>
-                                <li>App Improvement: Analyzing usage patterns to enhance our app's features and performance.</li>
-                            </ul>
-                        </Section>
-
-                        <Section title="Data Security" >
-                            <ul>
-                                <li>Encryption: BVN is securely stored in encrypted forms in our database.</li>
-                                <li>Secure Storage: Identification documents are safeguarded in secure cloud storage services.</li>
-                                <li>Access Controls: Access to sensitive data is restricted to authorized personnel.</li>
-                            </ul>
-                        </Section>
-
-                        <Section title="Sharing with External Providers" >
-                            <p>Certain information, such as identification documents and BVN, may be shared with external providers solely for identity verification and fraud protection purposes.</p>
-                        </Section>
-
-                        <Section title="Data Retention" >
-                            <p>We retain your data as long as your account remains active, including identification details essential for ongoing fraud detection efforts.</p>
-                        </Section>
-
-                        <Section title="User Consent and Opt-out" >
-                            <p>By using our app, you explicitly consent to the collection and retention of your data for identity verification and fraud protection. Due to the nature of fraud prevention, certain identification details cannot be removed upon user request.</p>
-                        </Section>
-
-                        <Section title="Changes to This Privacy Policy" >
-                            <p>We may update this Privacy Policy to reflect changes in our practices or for legal reasons. Significant changes will be communicated through the app or other designated channels.</p>
-                        </Section>
-                    </div>
-                </div>
-
+const PrivacyPolicy: React.FC = () => {
+  return (
+    <div className="text-[#6A6B6C]">
+      <header className="bg-[#EBF3FB] px-10 py-7 text-center">
+        <h2 className="w-full rounded-md bg-[#006FCF] text-center text-white">
+          PRIVACY POLICY
+        </h2>
+      </header>
+      <section aria-labelledby="privacy policy">
+        <div>
+          <h3 className="text-[#006FCF]">Privacy Policy</h3>
+          <p className="text-[#6A6B6C]">
+            Welcome to Veridux's Privacy Policy. This document outlines how
+            Veridux ("we", "us", or "our") collects, uses, discloses, and
+            protects the information you provide when you visit our website or
+            use our services.
+          </p>
+        </div>
+        <div>
+          <div>
+            <h3 className="mb-5 text-[#006FCF]">1. Information We Collect:</h3>
+            <p className="">
+              We collect various types of information when you interact with our
+              website or use our services
+            </p>
+            <div>
+              <p className="my-5">a. Personal Information:</p>
+              {/* <p className="mb-0">When you register an account, place an order, or interact with our website, we may collect personal information such as:</p> */}
+              <ul className="list-inside list-disc">
+                When you register an account, place an order, or interact with
+                our website, we may collect personal information such as:
+                <li>your name</li>
+                <li>Email address</li>
+                <li>Postal address</li>
+                <li>Phone number</li>
+                <li>
+                  Payment information (credit card details, billing address)
+                </li>
+              </ul>
+              <p>
+                We collect this information to provide you with the services you
+                request, process your orders, communicate with you, and improve
+                our services
+              </p>
+            </div>
+            <div className="my-5">
+              <p className="mb-5">b. Usage Information:</p>
+              {/* <p className="mb-0">When you register an account, place an order, or interact with our website, we may collect personal information such as:</p> */}
+              <ul className="list-inside list-disc">
+                We automatically collect certain information about your
+                interactions with our website and services, including:
+                <li>IP address</li>
+                <li>Browser Type</li>
+                <li>Device Information</li>
+                <li>Pages visited</li>
+                <li>Clickstream data</li>
+                <li>Date and time of visits</li>
+              </ul>
+              <p>
+                We use this information to analyze trends, administer our
+                website, track user movements, and gather demographic
+                information for aggregate use. This helps us improve the
+                functionality and performance of your website and services.
+              </p>
             </div>
 
-            <Footer />
+            <div className="mb-10">
+              <p className="my-5">c. Cookies and Similar Technologies:</p>
+              <p>
+                We may use cookies, web beacons, and similar technologies to
+                collect information about your interactions with our website.
+                Cookies are small text files stored on your device that help us
+                recognize you and customize your experience. You can control
+                cookies through your browser settings, but disabling cookies may
+                limit certain features of our websit
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">
+              2. How We Use Your Information:
+            </h3>
+            <p className="mb-5">
+              We use the information we collect for various purposes including:
+            </p>
+            <ul className="list-inside list-disc">
+              <li>Providing and managing our services</li>
+              <li>Processing orders and transactions</li>
+              <li>
+                Communicating with you about your account, orders, and
+                promotions.
+              </li>
+              <li>Customizing and improving our website and services</li>
+              <li>Analyzing usage trends and preferences</li>
+              <li>Preventing fraudulent activity and ensuring security</li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">
+              3. Information Sharing and Disclosure:
+            </h3>
+            <p className="mb-5">
+              We may share your information with third parties under the
+              following circumstances:
+            </p>
+            <ul className="list-inside list-disc">
+              <li>
+                Service Providers: We may share your information with trusted
+                third-party service providers who assist us in providing and
+                improving our services. These service providers are
+                contractually obligated to use your information only for the
+                purposes of providing services to us.
+              </li>
+              <li>
+                Legal Requirements: We may disclose your information if required
+                to do so by law or in response to valid legal requests, such as
+                subpoenas, court orders, or legal process.
+              </li>
+              <li>
+                Business Transfers: In the event of a merger, acquisition, or
+                sale of all or a portion of our assets, your information may be
+                transferred as part of the transaction. We will notify you of
+                any such transfer and any changes to our privacy practices.
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">4. Data Security:</h3>
+            <p className="">
+              We take reasonable measures to protect the security of your
+              personal information and prevent unauthorized access, disclosure,
+              alteration, or destruction. We use encryption, firewalls, and
+              other security technologies to safeguard your data. However, no
+              method of transmission over the internet or electronic storage is
+              100% secure, and we cannot guarantee absolute security.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">5. Your Privacy Choices:</h3>
+            <p className="">
+              You have the right to access, update, or delete your personal
+              information at any time. You may also opt-out of receiving
+              promotional communications from us by following the instructions
+              provided in the communication or by contacting us directly.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">6. Children's Privacy:</h3>
+            <p className="">
+              Our website and services are not intended for children under the
+              age of 13. We do not knowingly collect personal information from
+              children under the age of 13. If you believe we have collected
+              personal information from a child under the age of 13, please
+              contact us immediately.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">
+              7. Updates to this Privacy Policy:
+            </h3>
+            <p className="">
+              We may update this Privacy Policy from time to time to reflect
+              changes in our practices or legal requirements. We will notify you
+              of any material changes by posting the updated policy on our
+              website. We encourage you to review this Privacy Policy
+              periodically for the latest information on our privacy practices.
+            </p>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="mb-5 text-[#006FCF]">8. Contact Us:</h3>
+            <p className="">
+              f you have any questions or concerns about our Privacy Policy or
+              our data practices, please contact us at
+              <a
+                href="mailto:contact@veridux.com"
+                className="text-[#006FcF] underline hover:no-underline"
+              >
+                contact@veridux.com
+              </a>
+            </p>
+          </div>
         </div>
-    );
+      </section>
+      <footer>
+        <img src="/src/assets/footer-frame.png" alt="app store image" />
+      </footer>
+    </div>
+  );
 };
-
-const Section = ({ title, children }: { title: string, children: ReactNode }) => {
-    return (
-        <div style={{ marginTop: '30px', padding: '10px' }}>
-            <h2>{title}</h2>
-            {children}
-        </div>
-    );
-};
-
-
-// const Section = ({ title, children }: { title: string, children: ReactNode }) => {
-//     return (
-//         <div style={{ marginTop: '10px' }}>
-//             <h4>{title}</h4>
-//             {children}
-//         </div>
-//     );
-// };
 
 export default PrivacyPolicy;

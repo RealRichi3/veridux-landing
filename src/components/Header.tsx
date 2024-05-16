@@ -1,97 +1,81 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Drawer } from "antd";
+const Header: React.FC = () => {
+  const [openMenu, setOpenMenu] = useState(false);
 
-export const Header = ({ scrollIntoView }: { scrollIntoView?: () => void }) => {
-  const [showDrawer, setShowDrawer] = useState(false);
+  function toggleOpenMenu (){
+    setOpenMenu(!openMenu)
+  }
   return (
-    <div className="mainHeader">
-      <div className="logo">
-        <img src="/Veridux.svg" alt="Veridux Logo" />
-      </div>
-      <ul className="show-desktop navbar">
-        <li>
-          <Link to={"/"}>Home</Link>
-        </li>
-        {/* <li>
-          <Link to={""}>Blog</Link>
-        </li> */}
-        <li>
-          <Link to={"/faqs"}>FAQ</Link>
-        </li>
-      </ul>
-
-      <div className="mainHeader_btns show-desktop" onClick={scrollIntoView}>
-        <Link to={"/"} className="btn-primary">
-          Join the waitlist
-        </Link>
-        {/* <Link to={"/"} className="btn-primary">
-                    Login
-                </Link> */}
-      </div>
-
-      <div className="show-mobile">
-        {showDrawer ? (
-          <MenuFoldOutlined onClick={() => setShowDrawer(false)} />
-        ) : (
-          <MenuUnfoldOutlined onClick={() => setShowDrawer(true)} />
-        )}
-      </div>
-      <Drawer
-        open={showDrawer}
-        onClose={() => setShowDrawer(false)}
-        placement="left"
-      >
-        <div className="logo" style={{ marginBottom: "2rem" }}>
-          <img src="/Veridux.svg" alt="Veridux Logo" />
-        </div>
+    <>
+      <header className="flex h-16 items-center justify-between bg-white px-5 md:h-28 md:px-10">
         <div>
-          <Link
-            to={"/"}
-            style={{
-              color: "#000",
-              fontSize: "1.2rem",
-              marginBottom: "1rem",
-              display: "block",
-            }}
-          >
-            Home
-          </Link>
+          <img src="/src/assets/veridux-logo.png" alt="logo" />
         </div>
-        <div>
-          <Link
-            to={"/"}
-            style={{
-              color: "#000",
-              fontSize: "1.2rem",
-              marginBottom: "1rem",
-              display: "block",
-            }}
-          >
-            Blog
-          </Link>
+        <div className="text-primary lg:hidden" onClick={toggleOpenMenu}>
+          {openMenu ? <IoClose /> : <RxHamburgerMenu />}
         </div>
-        <Link
-          to={"/faqs"}
-          style={{
-            color: "#000",
-            fontSize: "1.2rem",
-            marginBottom: "1rem",
-            display: "block",
-          }}
-        >
-          FAQ
-        </Link>
-        <div className="mainHeader_btns" style={{ marginTop: "2rem" }}>
-          <Link to={"/"} className="btn-secondary">
-            Join
-          </Link>
-          <Link to={"/"} className="btn-primary">
-            Login
-          </Link>
-        </div>
-      </Drawer>
-    </div>
+        <ul className="hidden flex-row justify-between gap-6 text-secondary lg:flex">
+          <li>
+            <NavLink className="border-b-4 border-b-primary pb-2" to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="contact-us">Contact Us</NavLink>
+          </li>
+          <li>
+            <NavLink to="FAQ">FAQ</NavLink>
+          </li>
+          <li>
+            <NavLink to="privacy-policy">Privacy Policy</NavLink>
+          </li>
+          <li>
+            <NavLink to="t&c">Terms&Conditions</NavLink>
+          </li>
+        </ul>
+
+        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white lg:block">
+          Login / Sign Up
+        </button>
+      </header>
+      {openMenu && (
+        <ul className="justify-top flex h-[100dvh] w-full flex-col items-center gap-6 bg-[#F9F9F9] text-secondary lg:flex">
+          <li>
+            <NavLink
+              onClick={() => setOpenMenu(false)}
+              className="border-b-4 border-b-primary pb-2"
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink onClick={() => setOpenMenu(false)} to="contact-us">
+              Contact Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink onClick={() => setOpenMenu(false)} to="FAQ">
+              FAQ
+            </NavLink>
+          </li>
+          <li>
+            <NavLink onClick={() => setOpenMenu(false)} to="privacy-policy">
+              Privacy Policy
+            </NavLink>
+          </li>
+          <li>
+            <NavLink onClick={() => setOpenMenu(false)} to="t&c">
+              Terms&Conditions
+            </NavLink>
+          </li>
+        </ul>
+      )}
+    </>
   );
 };
+
+export default Header;

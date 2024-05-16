@@ -1,33 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { FAQs } from "./pages/FAQs";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ContactUs from "./pages/ContactUs";
+import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
-
-const AppStore = () => {
-  window.location =
-    "https://play.google.com/store/apps/details?id=com.momastores.app.momastores" as string &
-      Location;
-
-  return <>{}</>;
-};
+import TermsAndConditions from "./pages/TermsAndContditions";
+import HomePage from "./pages/HomePage";
+import Layout from "./Layout";
 
 function App() {
   return (
-    <>
-      {/* <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="/android" element={<AppStore />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<Terms />} />
-        </Routes>
-      </Router> */}
-      <div className="bg-blue-500 text-pink-700 ">
-        this is a boy
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="contact-us" element={<ContactUs />} />
+          <Route path="FAQ" element={<FAQ />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="t&c" element={<TermsAndConditions />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
