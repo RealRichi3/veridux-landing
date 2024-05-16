@@ -25,16 +25,16 @@ const Footer: React.FC = () => {
               <img src="/src/assets/footer-ios-store.png" alt="ios store" />
             </div>
           </div>
-          <div className="flex flex-row">
+          <div className="flex flex-row py-10">
             <img
               src="/src/assets/footer-image-1.png"
               alt="iphone image"
-              className=""
+              className="max-2xl:h-[300px]"
             />
             <img
               src="/src/assets/footer-image-2.png"
               alt="iphone image"
-              className=""
+              className="max-2xl:h-[300px]"
             />
           </div>
         </div>

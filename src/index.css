@@ -12,7 +12,7 @@ body {
 }
 
 .placeholder{
-  @apply placeholder-[#FAFAFA] focus:outline-none border-2 rounded-md border-[#D7D7D7] p-2 w-[300px] md:w-[600px]
+  @apply placeholder-[#6A6B6C] focus:outline-none border-2 rounded-md border-[#D7D7D7] p-2 w-[300px] md:w-[600px]
 }
 
 .faq-text{
