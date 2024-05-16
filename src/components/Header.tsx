@@ -41,7 +41,7 @@ const Header: React.FC = () => {
               Contact Us
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               className={({ isActive }) =>
                 `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             >
               FAQ
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
               Contact Us
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               className={({ isActive }) =>
                 `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
             >
               FAQ
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               className={({ isActive }) =>

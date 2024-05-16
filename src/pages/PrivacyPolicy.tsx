@@ -8,7 +8,7 @@ const PrivacyPolicy: React.FC = () => {
       </header>
       <section
         aria-labelledby="privacy policy"
-        className="bg-white p-5 md:p-10 lg:p-20"
+        className="mx-auto max-w-[1600px] bg-white p-5 md:p-10 lg:p-20"
       >
         <div className="">
           <h3 className="text-3xl text-[#006FCF]">Privacy Policy</h3>
