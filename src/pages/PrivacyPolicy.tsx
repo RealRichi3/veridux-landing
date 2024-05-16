@@ -28,7 +28,6 @@ const PrivacyPolicy: React.FC = () => {
             </p>
             <div className="faq-text">
               <p className="my-5">a. Personal Information:</p>
-              {/* <p className="mb-0">When you register an account, place an order, or interact with our website, we may collect personal information such as:</p> */}
               <ul className="list-inside list-disc">
                 When you register an account, place an order, or interact with
                 our website, we may collect personal information such as:

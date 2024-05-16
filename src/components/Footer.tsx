@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <footer className="bg-[#0F172A] px-10 pt-10">
-        <div className="flex flex-col items-center justify-between border-b-2 border-b-gray-400 pb-10 md:flex-row lg:pb-20">
+      <footer className="bg-[#0F172A] px-10 pt-10 ">
+        <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between border-b-2 border-b-gray-400 pb-10 md:flex-row lg:pb-20">
           <Link to="/">
             <img src="/src/assets/veridux-logo.png" alt="logo"></img>
           </Link>
