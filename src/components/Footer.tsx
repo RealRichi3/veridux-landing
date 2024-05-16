@@ -11,7 +11,7 @@ const year = date.getFullYear();
 const Footer: React.FC = () => {
   return (
     <footer className="flex flex-col ">
-      <div className="hidden w-full bg-blue-300 px-20 py-10 xl:block">
+      <div className="hidden w-full max-w-[1600px] mx-auto bg-blue-300 px-20 py-10 xl:block">
         <div className="grid items-center gap-10 rounded-2xl bg-primary px-20 lg:grid-cols-2">
           <div className="">
             <p className="mb-5 max-w-[400px] text-4xl font-semibold text-white">
@@ -29,12 +29,12 @@ const Footer: React.FC = () => {
             <img
               src="/src/assets/footer-image-1.png"
               alt="iphone image"
-              className="max-2xl:h-[300px]"
+              className="max-2xl:h-[300px] w-[300px]"
             />
             <img
               src="/src/assets/footer-image-2.png"
               alt="iphone image"
-              className="max-2xl:h-[300px]"
+              className="max-2xl:h-[300px] w-[300px]"
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        <p className="my-5 pb-10 text-center text-secondary lg:mt-10">
+        <p className="pb-10 text-center text-secondary lg:mt-10">
           {/* <PiCopyrightLight /> */}
           &copy;Veridux {year} All Rights Reserved
         </p>

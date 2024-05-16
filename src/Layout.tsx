@@ -6,7 +6,7 @@ const Layout: React.FC = () => {
   return (
     <div className="l font-sans">
       <Header />
-      <main className="w-full">
+      <main className="w-full max-w-[1600px] bg-white mx-auto">
         <Outlet />
       </main>
 

@@ -45,9 +45,6 @@ const FAQ: React.FC = () => {
           ))}
         </div>
       </main>
-      <footer>
-        <img src="/src/assets/footer-frame.png" alt="app store image" />
-      </footer>
     </div>
   );
 };

@@ -33,7 +33,7 @@ const Header: React.FC = () => {
             <NavLink to="privacy-policy">Privacy Policy</NavLink>
           </li>
           <li>
-            <NavLink to="t&c">Terms&Conditions</NavLink>
+            {/* <NavLink to="t&c">Terms & Conditions</NavLink> */}
           </li>
         </ul>
 
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <NavLink onClick={() => setOpenMenu(false)} to="t&c">
-              Terms&Conditions
+              Terms & Conditions
             </NavLink>
           </li>
         </ul>
