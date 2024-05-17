@@ -14,8 +14,8 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="FAQ" element={<FAQ />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="t&c" element={<TermsAndConditions />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
+          <Route path="terms" element={<TermsAndConditions />} />
         </Route>
       </Routes>
     </BrowserRouter>
