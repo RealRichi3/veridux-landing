@@ -1,13 +1,21 @@
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 
 const FAQ: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [openID, setOpenID] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
+  const [openID, setOpenID] = useState<number | null>(0);
 
-    const toggleOpen = () => {
-        setIsOpen((isOpen) => !isOpen)
+  const toggleOpen = (id: number) => {
+    if (openID === id) {
+      setIsOpen(!isOpen);
+      if (isOpen) {
+        setOpenID(null);
+      }
+    } else {
+      setIsOpen(true);
+      setOpenID(id);
     }
+  };
   return (
     <div>
       <section
@@ -32,7 +40,7 @@ const FAQ: React.FC = () => {
         </div>
       </section>
       <main aria-labelledby="frequently asked questions" className=" my-10">
-        <h1 className="text-center text-2xl  md:text-[40px] font-semibold text-[#2A2B4A]">
+        <h1 className="mb-5 text-center  text-2xl font-semibold text-[#2A2B4A] md:text-[40px]">
           Frequently Asked Questions
         </h1>
         <p className="text-center text-[20p] text-secondary">
@@ -41,19 +49,26 @@ const FAQ: React.FC = () => {
 
         <div className="mt-10 max-lg:mx-10 max-md:mx-5">
           {questions.map((question, index) => (
-            // <div className= {`border-2 rounded-md py-2 ${isOpen? "border-[#006FCF]" : border-[#6A6B6C]}  `}>
             <div
-              className={`mx-auto mb-5 max-w-[950px]  rounded-md border-2 py-2 max-md:px-5 ${isOpen ? "border-[#006FCF]" : "border-[#6A6B6C]"}`}
-              onClick={toggleOpen}
+              className={`mx-auto mb-5 max-w-[950px]  rounded-md border-2 py-2 max-md:px-5 ${question.id === openID ? "border-[#006FCF]" : "border-[#6A6B6C]"}`}
             >
               <div key={index} className="flex  justify-between py-5 md:px-10">
-                <p className="mb5 text-xl md:text-2xl text-[#2A2B4A]">{question.title}</p>
-                <button className="text-[#2A2B4A]">
-                  <IoIosArrowUp />
+                <p className="mb5 text-xl text-[#2A2B4A] md:text-2xl">
+                  {question.title}
+                </p>
+                <button
+                  className="text-[#2A2B4A] "
+                  onClick={() => toggleOpen(question.id)}
+                >
+                  {isOpen && openID === question.id ? (
+                    <IoIosArrowUp />
+                  ) : (
+                    <IoIosArrowDown />
+                  )}
                 </button>
               </div>
-              {isOpen && (
-                <p className="mx-auto my-4 max-w-[860px] text-lg md:text-xl text-secondary max-lg:px-10 max-md:px-5">
+              {isOpen && question.id === openID && (
+                <p className="mx-auto my-4 max-w-[860px] text-lg text-secondary max-lg:px-10 max-md:px-5 md:text-xl">
                   {question.paragraph}
                 </p>
               )}

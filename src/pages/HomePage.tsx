@@ -120,7 +120,7 @@ const HomePage: React.FC = () => {
         <h3 className="text-center text-2xl font-normal text-[#2A2B4A]">
           Our Testimonials
         </h3>
-        <div className="mt-10 grid grid-cols-1 items-center gap-10 text-center lg:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 items-center max-lg:place-items-center gap-10 text-center lg:grid-cols-2">
           <img
             src="/src/assets/review-1.png"
             alt="review-image"
