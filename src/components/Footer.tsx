@@ -65,30 +65,18 @@ const Footer: React.FC = () => {
 
                     <div className="mt-5 flex flex-row items-center justify-center gap-3">
                         <a
-                            href=""
+                            href="https://twitter.com/Veridux"
                             className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
                         >
                             <FaXTwitter />
                         </a>
                         <a
-                            href=""
-                            className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
-                        >
-                            <FaFacebookF />
-                        </a>
-                        <a
-                            href=""
+                            href="https://www.instagram.com/veriduxstores/"
                             className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
                         >
                             <FaInstagram />
                         </a>
-                        <a
-                            href=""
-                            className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
-                        >
-                            <FaGithub />
-                        </a>
-                    </div>
+                                            </div>
                 </div>
                 <p className="mt-2 pb-10 text-center text-secondary lg:mt-10">
                     {/* <PiCopyrightLight /> */}

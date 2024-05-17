@@ -12,8 +12,7 @@ const HomePage: React.FC = () => {
                     </h2>
                     <h4 className="my-3 max-w-[700px] text-center text-sm text-[#FF9900] md:text-[20px]">
                         Welcome to Veridux, where innovation meets versatility. Our platform
-                        offers a wide range of services, including marketplace management,
-                        flight booking, bill payment, airtime top-up, and more.
+                        offers a wide range of services,flight booking, bill payment, airtime top-up, and more.
                     </h4>
                     <div className="mb-10 flex justify-center gap-10">
                         <a href="">
