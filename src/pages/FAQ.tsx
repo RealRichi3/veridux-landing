@@ -20,7 +20,7 @@ const FAQ: React.FC = () => {
     <div>
       <section
         aria-labelledby="FAQ"
-        className="flex flex-col items-center bg-[#EBF3FB] py-10 max-sm:px-5 md:flex-row md:justify-center md:py-20 md:pl-20 "
+        className="flex flex-col items-center bg-[#EBF3FB] py-10 max-sm:px-5 md:flex-row md:justify-center md:py-20 md:px-10 "
       >
         <div className="max-w-[500px] ">
           <h2 className="mb-4 text-3xl font-semibold text-black md:text-5xl">

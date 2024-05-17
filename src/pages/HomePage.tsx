@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
       <div className="bg-white">
         <section
           aria-labelledby="unique-features"
-          className="mx-auto max-w-[1600px] bg-white px-5 py-10 md:px-20 xl:px-32"
+          className="mx-auto max-w-[1600px] bg-white px-5 py-10 lg:px-20 md:px-10 xl:px-32"
         >
           <p className="text-center text-3xl font-[500]  text-black">
             What Sets Us Apart
@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
       </div>
       <section
         aria-labelledby="services"
-        className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 bg-[#F9F9F9] px-5 py-10 md:grid-cols-2 md:px-20 xl:grid-cols-3 xl:px-32"
+        className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 bg-[#F9F9F9] px-5 py-10 md:grid-cols-2 md:px-10 lg:px-20 xl:grid-cols-3 xl:px-32"
       >
         {servicesArray.map((service, index) => (
           <div key={index} className="pt-5 xl:pt-10 ">

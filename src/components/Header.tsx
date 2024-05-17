@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
@@ -11,9 +11,9 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="flex h-16 items-center justify-between bg-white px-5 md:h-28 md:px-10">
-        <div>
-          <img src="/src/assets/veridux-logo.png" alt="logo" />
-        </div>
+        <Link to="/">
+          <img src="/src/assets/veridux-logo.png" alt="logo" className="l cursor-default" />
+        </Link>
         <div className="text-primary lg:hidden" onClick={toggleOpenMenu}>
           {openMenu ? <IoClose /> : <RxHamburgerMenu />}
         </div>

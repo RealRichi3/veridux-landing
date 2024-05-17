@@ -11,11 +11,10 @@ const year = date.getFullYear();
 const Footer: React.FC = () => {
   return (
     <footer className="flex flex-col ">
-      <div className="hidden w-full z-20  bg-blue-300 px-20 py-10 xl:block">
+      <div className="z-20 hidden w-full  bg-blue-300 px-20 py-10 xl:block">
         {/* <img src="/src/assets/footer-circle-top.svg" className="relative left-[400px] top-[212px]" alt="" /> */}
         <div className="mx-auto grid max-w-[1600px] items-center gap-10 rounded-2xl bg-primary px-20 lg:grid-cols-2">
           <div className="">
-
             <p className="mb-5 max-w-[400px] text-4xl font-semibold text-white">
               Download Veridux App on various platforms
             </p>
@@ -67,31 +66,31 @@ const Footer: React.FC = () => {
           <div className="mt-5 flex flex-row items-center justify-center gap-3">
             <a
               href=""
-              className="rounded-full bg-white px-4 py-4 text-center text-blue-400 duration-300 hover:bg-blue-400 hover:text-white"
+              className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
             >
               <FaXTwitter />
             </a>
             <a
               href=""
-              className="rounded-full bg-white px-4 py-4 text-center text-blue-400 duration-300 hover:bg-blue-400 hover:text-white"
+              className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
             >
               <FaFacebookF />
             </a>
             <a
               href=""
-              className="rounded-full bg-white px-4 py-4 text-center text-blue-400 duration-300 hover:bg-blue-400 hover:text-white"
+              className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
             >
               <FaInstagram />
             </a>
             <a
               href=""
-              className="rounded-full bg-white px-4 py-4 text-center text-blue-400 duration-300 hover:bg-blue-400 hover:text-white"
+              className="rounded-full bg-white px-4 py-4 text-center text-primary duration-300 hover:bg-primary hover:text-white"
             >
               <FaGithub />
             </a>
           </div>
         </div>
-        <p className="pb-10 text-center text-secondary lg:mt-10">
+        <p className="mt-2 pb-10 text-center text-secondary lg:mt-10">
           {/* <PiCopyrightLight /> */}
           &copy;Veridux {year} All Rights Reserved
         </p>
