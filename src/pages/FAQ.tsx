@@ -33,7 +33,7 @@ const FAQ: React.FC = () => {
         </div>
         <div className="md:col-span-8 lg:col-span-6">
           <img
-            src="/src/assets/faq.svg"
+            src="/faq.svg"
             alt="image of application dashboard"
             className="h-[200px] md:h-[400px]"
           />

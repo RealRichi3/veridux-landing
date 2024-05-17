@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     <>
       <header className="flex h-16 items-center justify-between bg-white px-5 md:h-28 md:px-10">
         <Link to="/">
-          <img src="/src/assets/veridux-logo.png" alt="logo" className="l cursor-default" />
+          <img src="veridux-footer.svg" alt="logo" className="l cursor-default" />
         </Link>
         <div className="text-primary lg:hidden" onClick={toggleOpenMenu}>
           {openMenu ? <IoClose /> : <RxHamburgerMenu />}
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
             </NavLink> */}
             <NavLink
               className={({ isActive }) =>
-                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               to="/"
             >
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               to="contact-us"
             >
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               to="FAQ"
             >
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               to="privacy-policy"
             >

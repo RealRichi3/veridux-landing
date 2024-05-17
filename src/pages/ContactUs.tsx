@@ -19,7 +19,7 @@ const ContactUs: React.FC = () => {
         </div>
         <div className="">
           <img
-            src="/src/assets/contact-us.svg"
+            src="/purchase-item.svg"
             alt="image of purchase item"
             className="md:h-[400px] h-[200px]"
           />

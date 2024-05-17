@@ -20,20 +20,20 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex flex-row gap-10">
               <img
-                src="/src/assets/footer-google-playstore.png"
+                src="/footer-playstore.svg"
                 alt="google playstore"
               />
-              <img src="/src/assets/footer-ios-store.png" alt="ios store" />
+              {/* <img src="/src/assets/footer-ios-store.png" alt="ios store" /> */}
             </div>
           </div>
           <div className="flex flex-row py-10">
             <img
-              src="/src/assets/footer-image-1.png"
+              src="/footer-image-1.svg"
               alt="iphone image"
               className="w-[300px] max-2xl:h-[300px]"
             />
             <img
-              src="/src/assets/footer-image-2.png"
+              src="/footer-image-2.svg"
               alt="iphone image"
               className="w-[300px] max-2xl:h-[300px]"
             />
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
       <footer className="bg-[#0F172A] px-10 pt-10 ">
         <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between border-b-2 border-b-gray-400 pb-10 md:flex-row lg:pb-20">
           <Link to="/">
-            <img src="/src/assets/veridux-logo.png" alt="logo"></img>
+            <img src="/veridux-footer.svg" alt="logo"></img>
           </Link>
           <ul className="flex flex-col justify-between text-secondary max-md:text-center lg:flex-row lg:gap-5 ">
             <li className="duration-300 hover:text-blue-500 max-md:mt-2">
