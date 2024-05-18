@@ -5,8 +5,8 @@ import { useState } from "react";
 const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
-  function toggleOpenMenu() {
-    setOpenMenu(!openMenu);
+  function toggleOpenMenu (){
+    setOpenMenu(!openMenu)
   }
   return (
     <>
@@ -14,12 +14,14 @@ const Header: React.FC = () => {
         <Link to="/">
           <img src="veridux-footer.svg" alt="logo" className="cursor-default" />
         </Link>
-        <div className="text-primary lg:hidden " onClick={toggleOpenMenu}>
+        <div className="text-primary lg:hidden" onClick={toggleOpenMenu}>
           {openMenu ? <IoClose /> : <RxHamburgerMenu />}
         </div>
         <ul className="hidden flex-row justify-between gap-6 text-secondary lg:flex">
           <li>
-      
+            {/* <NavLink className="border-b-4 border-b-primary pb-2" to="/">
+              Home
+            </NavLink> */}
             <NavLink
               className={({ isActive }) =>
                 `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
@@ -54,17 +56,16 @@ const Header: React.FC = () => {
               className={({ isActive }) =>
                 `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
-              to="privacy"
+              to="privacy-policy"
             >
               Privacy Policy
             </NavLink>
           </li>
+          <li>{/* <NavLink to="t&c">Terms & Conditions</NavLink> */}</li>
         </ul>
 
         <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400 lg:block">
-          <Link to="https://home.veridux.com.ng/login/email">
-            Login / Sign Up
-          </Link>
+          Login / Sign Up
         </button>
       </header>
       {openMenu && (
@@ -108,7 +109,7 @@ const Header: React.FC = () => {
                 `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               onClick={() => setOpenMenu(false)}
-              to="privacy"
+              to="privacy-policy"
             >
               Privacy Policy
             </NavLink>
@@ -123,11 +124,6 @@ const Header: React.FC = () => {
             >
               Terms & Conditions
             </NavLink>
-          </li>
-          <li className="rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400">
-            <Link to="https://home.veridux.com.ng/login/email">
-              Login / Sign Up
-            </Link>
           </li>
         </ul>
       )}
