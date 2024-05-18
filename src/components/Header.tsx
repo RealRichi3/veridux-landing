@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                 `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               onClick={() => setOpenMenu(false)}
-              to="t&c"
+              to="terms"
             >
               Terms & Conditions
             </NavLink>

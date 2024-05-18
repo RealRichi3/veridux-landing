@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import {
     FaXTwitter,
-    FaFacebookF,
     FaInstagram,
-    FaGithub,
 } from "react-icons/fa6";
 
 const date = new Date();
@@ -12,7 +10,6 @@ const Footer: React.FC = () => {
     return (
         <footer className="flex flex-col ">
             <div className="z-20 hidden w-full  bg-blue-300 px-20 py-10 xl:block">
-                {/* <img src="/src/assets/footer-circle-top.svg" className="relative left-[400px] top-[212px]" alt="" /> */}
                 <div className="mx-auto grid max-w-[1600px] items-center gap-10 rounded-2xl bg-primary px-20 lg:grid-cols-2">
                     <div className="">
                         <p className="mb-5 max-w-[400px] text-4xl font-semibold text-white">
@@ -24,7 +21,6 @@ const Footer: React.FC = () => {
                                     src="/footer-playstore.svg"
                                     alt="google playstore"
                                 />
-                                {/* <img src="/src/assets/footer-ios-store.png" alt="ios store" /> */}
                             </div>
                         </Link>
                     </div>
@@ -58,10 +54,10 @@ const Footer: React.FC = () => {
                             <Link to="FAQ">FAQ</Link>
                         </li>
                         <li className="duration-300 hover:text-blue-500 max-md:mt-2">
-                            <Link to="privacy-policy">Privacy Policy</Link>
+                            <Link to="privacy">Privacy Policy</Link>
                         </li>
                         <li className="duration-300 hover:text-blue-500 max-md:mt-2">
-                            <Link to="t&c">Terms & Conditions</Link>
+                            <Link to="terms">Terms & Conditions</Link>
                         </li>
                     </ul>
 
@@ -81,7 +77,6 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
                 <p className="mt-2 pb-10 text-center text-secondary lg:mt-10">
-                    {/* <PiCopyrightLight /> */}
                     &copy;Veridux {year} All Rights Reserved
                 </p>
             </footer>
@@ -91,4 +86,3 @@ const Footer: React.FC = () => {
 
 export default Footer;
 
-// twitter fb, ig, github
