@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
       >
         <div className="mx-auto max-w-[1600px]">
           <p className="text-center text-xl font-semibold text-white md:text-3xl">
-            Our Partnerships
+            Our Partners
           </p>
           <div className="flex flex-row md:flex-row md:justify-center gap-10 md:gap-20 mt-5">
             <img
