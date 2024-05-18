@@ -1,15 +1,70 @@
+import axios from "axios";
+import {toast} from "react-toastify";
+import { useState } from "react";
+
+const serverUrl = import.meta.env.VITE_SERVER_URL
+
 const ContactUs: React.FC = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const updateForm = ({ field, value }: { field: string; value: string }) => {
+        setForm((prev: typeof form) => ({ ...prev, [field]: value }));
+    };
+
+    const validateForm = () => {
+        return (
+            form.email.length > 0 && form.name.length > 0 && form.message.length > 0
+        );
+    };
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+<<<<<<< HEAD
+=======
+
+        if (!validateForm()) return window.alert("Please fill all fields");
+
+        setIsLoading(true);
+        try {
+            axios
+                .post(serverUrl+ "/contactreq", {
+                    ...form,
+                })
+                .then(() => {
+                    toast.success("Message sent successfully");
+                    setForm({ name: "", email: "", message: "" })
+                })
+                .catch(() => {
+                    toast.error("Message failed to send"); 
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                });
+        } catch (error) {
+            console.error(error);
+        }
+
+>>>>>>> emeke-branch
     };
     return (
         <div>
             <section
                 aria-labelledby="contact us"
+<<<<<<< HEAD
                 className="flex flex-col md:flex-row items-center md:justify-center bg-[#EBF3FB] md:py-20 md:pl-20 py-10 max-sm:px-5 "
             >
                 <div className="max-w-[500px] ">
                     <h2 className="mb-4 text-3xl md:text-5xl font-semibold text-black">
+=======
+                className="flex flex-col items-center bg-[#EBF3FB] py-10 max-sm:px-5 md:flex-row md:justify-center md:py-20 md:pl-20 "
+            >
+                <div className="max-w-[500px] ">
+                    <h2 className="mb-4 text-3xl font-semibold text-black md:text-5xl">
+>>>>>>> emeke-branch
                         Get in Touch with Veridux
                     </h2>
                     <p className="text-2xl text-[#6A6B6C] max-md:mb-4">
@@ -19,18 +74,34 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div className="">
                     <img
+<<<<<<< HEAD
                         src="/contact-us.svg"
                         alt="image of purchase item"
                         className="md:h-[400px] h-[200px]"
+=======
+                        src="/purchase-item.svg"
+                        alt="image of purchase item"
+                        className="h-[200px] md:h-[400px]"
+>>>>>>> emeke-branch
                     />
                 </div>
             </section>
             <form
+<<<<<<< HEAD
                 className="cursor-pointer  bg-white text-center py-10"
                 onSubmit={handleSubmit}
             >
                 <h2 className="md:text-[40px] text-2xl font-medium mb-5 text-[#2A2B4A]">Contact Us</h2>
                 <p className="text-[#2A2B4A] mb-5">
+=======
+                className="cursor-pointer  bg-white py-10 text-center"
+                onSubmit={handleSubmit}
+            >
+                <h2 className="mb-5 text-2xl font-medium text-[#2A2B4A] md:text-[40px]">
+                    Contact Us
+                </h2>
+                <p className="mb-5 text-[#2A2B4A]">
+>>>>>>> emeke-branch
                     Feel free to contact us anytime, we will get back to you as soon as we
                     can.
                 </p>
@@ -41,18 +112,31 @@ const ContactUs: React.FC = () => {
                         id=""
                         placeholder="Full Name"
                         className="placeholder"
+<<<<<<< HEAD
+=======
+                        required={true}
+                        onChange={(e) => updateForm({ field: "name", value: e.target.value })}
+                        value={form.name}
+>>>>>>> emeke-branch
                     />
                     <input
                         type="text"
                         name=""
                         id=""
                         placeholder="Email Address"
+<<<<<<< HEAD
+=======
+                        required={true}
+                        value={form.email}
+                        onChange={(e) => updateForm({ field: "email", value: e.target.value })}
+>>>>>>> emeke-branch
                         className="placeholder"
                     />
                     <textarea
                         // type="text"
                         name=""
                         id=""
+<<<<<<< HEAD
                         placeholder="Message"
                         className="placeholder h-[240px] align-text-top resize-none"
                         style={{ lineHeight: "normal" }}
@@ -60,6 +144,24 @@ const ContactUs: React.FC = () => {
                 </div>
                 <button type="submit" className="bg-[#006FCF] w-40 md:w-80 py-2 rounded-2xl text-white mt-5">
                     submit
+=======
+                        value={form.message}
+                        required={true}
+                        onChange={(e) => updateForm({ field: "message", value: e.target.value })}
+                        placeholder="Message"
+                        className="placeholder h-[240px] resize-none align-text-top"
+                        style={{ lineHeight: "normal" }}
+                    />
+                </div>
+                <button
+                    type="submit"
+                    disabled={!validateForm()}
+                    className="mt-5 w-40 rounded-2xl bg-[#006FCF] py-2 text-white md:w-80"
+                >
+                    {
+                        isLoading ? "Submitting..." : "Submit"
+                    }
+>>>>>>> emeke-branch
                 </button>
                 <div>
                     <iframe
@@ -67,14 +169,21 @@ const ContactUs: React.FC = () => {
                         // width="600"
                         // height="450"
                         // style="border:0;"
+<<<<<<< HEAD
                         className="w-full border-none my-10 h-[550px]"
+=======
+                        className="my-10 h-[550px] w-full border-none"
+>>>>>>> emeke-branch
                         allowFullScreen={false}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>
             </form>
+<<<<<<< HEAD
 
+=======
+>>>>>>> emeke-branch
         </div>
     );
 };

@@ -5,6 +5,7 @@ const FAQ: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [openID, setOpenID] = useState<number | null>(0);
 
+<<<<<<< HEAD
     const toggleOpen = (id: number) => {
         if (openID === id) {
             setIsOpen(!isOpen);
@@ -21,6 +22,54 @@ const FAQ: React.FC = () => {
             <section
                 aria-labelledby="FAQ"
                 className="flex flex-col items-center bg-[#EBF3FB] py-10 max-sm:px-5 md:flex-row md:justify-center md:py-20 md:px-10 "
+=======
+  const toggleOpen = (id: number) => {
+    if (openID === id) {
+      setIsOpen(!isOpen);
+      if (isOpen) {
+        setOpenID(null);
+      }
+    } else {
+      setIsOpen(true);
+      setOpenID(id);
+    }
+  };
+  return (
+    <div>
+      <section
+        aria-labelledby="FAQ"
+        className="flex flex-col items-center bg-[#EBF3FB] py-10 max-sm:px-5 md:flex-row md:justify-center md:py-20 md:px-10 "
+      >
+        <div className="max-w-[500px] ">
+          <h2 className="mb-4 text-3xl font-semibold text-black md:text-5xl">
+            Explore Veridux FAQ
+          </h2>
+          <p className="text-2xl text-[#6A6B6C] max-sm:mb-4">
+            We're here to help! Contact us for support, inquiries, or to share
+            your feedback.
+          </p>
+        </div>
+        <div className="md:col-span-8 lg:col-span-6">
+          <img
+            src="/faq.svg"
+            alt="image of application dashboard"
+            className="h-[200px] md:h-[400px]"
+          />
+        </div>
+      </section>
+      <main aria-labelledby="frequently asked questions" className=" my-10">
+        <h1 className="mb-5 text-center  text-2xl font-semibold text-[#2A2B4A] md:text-[40px]">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-center text-[20p] text-secondary">
+          Some of the questions you have in mind has been answered below.
+        </p>
+
+        <div className="mt-10 max-lg:mx-10 max-md:mx-5">
+          {questions.map((question, index) => (
+            <div
+              className={`mx-auto mb-5 max-w-[950px]  rounded-md border-2 py-2 max-md:px-5 ${question.id === openID ? "border-[#006FCF]" : "border-[#6A6B6C]"}`}
+>>>>>>> emeke-branch
             >
                 <div className="max-w-[500px] ">
                     <h2 className="mb-4 text-3xl font-semibold text-black md:text-5xl">
