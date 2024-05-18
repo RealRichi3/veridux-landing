@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
                         flight booking, bill payment, airtime top-up, and more.
                     </h4>
                     <div className="mb-10 flex justify-center gap-10">
-                        <a href="">
+                        <a href="https://play.google.com/store/apps/details?id=com.momastores.app.momastores">
                             <img
                                 src="/google-play.svg"
                                 alt="google playstore image"
