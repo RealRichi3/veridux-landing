@@ -12,15 +12,7 @@ const Header: React.FC = () => {
     <>
       <header className="flex h-16 items-center justify-between bg-white px-5 md:h-28 md:px-10">
         <Link to="/">
-<<<<<<< HEAD
-          <img
-            src="/veridux-logo.png"
-            alt="logo"
-            className="l cursor-default"
-          />
-=======
           <img src="veridux-footer.svg" alt="logo" className="l cursor-default" />
->>>>>>> emeke-branch
         </Link>
         <div className="text-primary lg:hidden" onClick={toggleOpenMenu}>
           {openMenu ? <IoClose /> : <RxHamburgerMenu />}
