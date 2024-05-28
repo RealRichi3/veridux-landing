@@ -1,97 +1,138 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { NavLink, Link } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Drawer } from "antd";
+const Header: React.FC = () => {
+  const [openMenu, setOpenMenu] = useState(false);
 
-export const Header = ({ scrollIntoView }: { scrollIntoView?: () => void }) => {
-  const [showDrawer, setShowDrawer] = useState(false);
+  function toggleOpenMenu() {
+    setOpenMenu(!openMenu);
+  }
   return (
-    <div className="mainHeader">
-      <div className="logo">
-        <img src="/Veridux.svg" alt="Veridux Logo" />
-      </div>
-      <ul className="show-desktop navbar">
-        <li>
-          <Link to={"/"}>Home</Link>
-        </li>
-        {/* <li>
-          <Link to={""}>Blog</Link>
-        </li> */}
-        <li>
-          <Link to={"/faqs"}>FAQ</Link>
-        </li>
-      </ul>
-
-      <div className="mainHeader_btns show-desktop" onClick={scrollIntoView}>
-        <Link to={"/"} className="btn-primary">
-          Join the waitlist
+    <>
+      <header className="flex h-16 items-center justify-between bg-white px-5 md:h-28 md:px-10">
+        <Link to="/">
+          <img src="veridux-footer.svg" alt="logo" className="cursor-default" />
         </Link>
-        {/* <Link to={"/"} className="btn-primary">
-                    Login
-                </Link> */}
-      </div>
+        <div className="text-primary lg:hidden " onClick={toggleOpenMenu}>
+          {openMenu ? <IoClose /> : <RxHamburgerMenu />}
+        </div>
+        <ul className="hidden flex-row justify-between gap-6 text-secondary lg:flex">
+          <li>
+      
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="contact-us"
+            >
+              Contact Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="FAQ"
+            >
+              FAQ
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="privacy"
+            >
+              Privacy Policy
+            </NavLink>
+          </li>
+        </ul>
 
-      <div className="show-mobile">
-        {showDrawer ? (
-          <MenuFoldOutlined onClick={() => setShowDrawer(false)} />
-        ) : (
-          <MenuUnfoldOutlined onClick={() => setShowDrawer(true)} />
-        )}
-      </div>
-      <Drawer
-        open={showDrawer}
-        onClose={() => setShowDrawer(false)}
-        placement="left"
-      >
-        <div className="logo" style={{ marginBottom: "2rem" }}>
-          <img src="/Veridux.svg" alt="Veridux Logo" />
-        </div>
-        <div>
-          <Link
-            to={"/"}
-            style={{
-              color: "#000",
-              fontSize: "1.2rem",
-              marginBottom: "1rem",
-              display: "block",
-            }}
-          >
-            Home
+        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400 lg:block">
+          <Link to="https://home.veridux.com.ng/login/email">
+            Login / Sign Up
           </Link>
-        </div>
-        <div>
-          <Link
-            to={"/"}
-            style={{
-              color: "#000",
-              fontSize: "1.2rem",
-              marginBottom: "1rem",
-              display: "block",
-            }}
-          >
-            Blog
-          </Link>
-        </div>
-        <Link
-          to={"/faqs"}
-          style={{
-            color: "#000",
-            fontSize: "1.2rem",
-            marginBottom: "1rem",
-            display: "block",
-          }}
-        >
-          FAQ
-        </Link>
-        <div className="mainHeader_btns" style={{ marginTop: "2rem" }}>
-          <Link to={"/"} className="btn-secondary">
-            Join
-          </Link>
-          <Link to={"/"} className="btn-primary">
-            Login
-          </Link>
-        </div>
-      </Drawer>
-    </div>
+        </button>
+      </header>
+      {openMenu && (
+        <ul className="justify-top flex h-[100dvh] w-full flex-col items-center gap-6 bg-[#F9F9F9] text-secondary lg:flex">
+          <li>
+            <NavLink
+              onClick={() => setOpenMenu(false)}
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="contact-us"
+            >
+              Contact Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="FAQ"
+            >
+              FAQ
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="privacy"
+            >
+              Privacy Policy
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
+              }
+              onClick={() => setOpenMenu(false)}
+              to="terms"
+            >
+              Terms & Conditions
+            </NavLink>
+          </li>
+          <li className="rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400">
+            <Link to="https://home.veridux.com.ng/login/email">
+              Login / Sign Up
+            </Link>
+          </li>
+        </ul>
+      )}
+    </>
   );
 };
+
+export default Header;

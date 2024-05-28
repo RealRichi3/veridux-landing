@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+  background-color: white;
+  color: coral;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.placeholder{
+  @apply placeholder-[#6A6B6C] focus:outline-none border-2 rounded-md border-[#D7D7D7] p-2 w-[300px] md:w-[600px]
+}
+
+.faq-text{
+  @apply text-[#6A6B6C] text-xl mb-20
+}
+
+.faq-header {
+  @apply text-primary mb-5 text-2xl
+}
+
+.tc-header{
+@apply text-primary mb-4 mt-10 font-bold md:text-3xl text-2xl
+}
+
+.tc-subheader{
+@apply text-primary mb-2 mt-4 font-semibold text-2xl
+}
+.tc-paragraph{
+@apply text-secondary text-xl
+}
