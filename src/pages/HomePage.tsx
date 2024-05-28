@@ -4,13 +4,13 @@ const HomePage: React.FC = () => {
             <div className="bg-tertiary">
                 <section
                     aria-labelledby="app-intro"
-                    className="mx-auto  flex max-w-[1600px] flex-col items-center  bg-tertiary px-5 text-center max-sm:py-10 md:px-20  md:pt-28"
+                    className="mx-auto  flex max-w-[1600px] flex-col items-center  bg-tertiary px-5 text-center max-sm:py-10 md:px-20  md:pt-20"
                 >
                     <div></div>
                     <h2 className="max-w-[700px] text-center text-2xl font-bold text-black md:text-5xl">
                         Experience Excellence with Veridux's Multi-Service Platform
                     </h2>
-                    <h4 className="my-3 max-w-[700px] text-center text-sm text-[#FF9900] md:text-[20px]">
+                    <h4 className="my-3 max-w-[700px] text-center text-sm text-[#FF9900] md:text-[20px] lg:mb-10">
                         Welcome to Veridux, where innovation meets versatility. Our platform
                         offers a wide range of services, including marketplace management,
                         flight booking, bill payment, airtime top-up, and more.

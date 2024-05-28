@@ -8,7 +8,7 @@ const TermsAndConditions: React.FC = () => {
             </header>
             <section
                 aria-labelledby="terms and conditions"
-                className="bg-white p-5 md:p-10 lg:p-20"
+                className="bg-white p-5 md:p-10 lg:p-20 max-w-[1600px] mx-auto"
             >
                 <div>
                     <h3 className="mb-5 text-2xl md:text-3xl text-[#006FCF]">

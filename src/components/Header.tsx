@@ -12,16 +12,14 @@ const Header: React.FC = () => {
     <>
       <header className="flex h-16 items-center justify-between bg-white px-5 md:h-28 md:px-10">
         <Link to="/">
-          <img src="veridux-footer.svg" alt="logo" className="l cursor-default" />
+          <img src="veridux-footer.svg" alt="logo" className="cursor-default" />
         </Link>
-        <div className="text-primary lg:hidden" onClick={toggleOpenMenu}>
+        <div className="text-primary lg:hidden " onClick={toggleOpenMenu}>
           {openMenu ? <IoClose /> : <RxHamburgerMenu />}
         </div>
         <ul className="hidden flex-row justify-between gap-6 text-secondary lg:flex">
           <li>
-            {/* <NavLink className="border-b-4 border-b-primary pb-2" to="/">
-              Home
-            </NavLink> */}
+      
             <NavLink
               className={({ isActive }) =>
                 `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
@@ -56,19 +54,18 @@ const Header: React.FC = () => {
               className={({ isActive }) =>
                 `pb-2 hover:text-primary ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
-              to="privacy-policy"
+              to="privacy"
             >
               Privacy Policy
             </NavLink>
           </li>
-          <li>{/* <NavLink to="t&c">Terms & Conditions</NavLink> */}</li>
         </ul>
 
-        <Link to="https://home.veridux.com.ng/login/email">
-          <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400 lg:block">
+        <button className="hidden rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400 lg:block">
+          <Link to="https://home.veridux.com.ng/login/email">
             Login / Sign Up
-          </button>
-        </Link>
+          </Link>
+        </button>
       </header>
       {openMenu && (
         <ul className="justify-top flex h-[100dvh] w-full flex-col items-center gap-6 bg-[#F9F9F9] text-secondary lg:flex">
@@ -111,7 +108,7 @@ const Header: React.FC = () => {
                 `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               onClick={() => setOpenMenu(false)}
-              to="privacy-policy"
+              to="privacy"
             >
               Privacy Policy
             </NavLink>
@@ -122,10 +119,15 @@ const Header: React.FC = () => {
                 `pb-2 ${isActive ? "border-b-4 border-b-blue-500" : ""}`
               }
               onClick={() => setOpenMenu(false)}
-              to="t&c"
+              to="terms"
             >
               Terms & Conditions
             </NavLink>
+          </li>
+          <li className="rounded-md bg-[#006FCF] px-5 py-2 text-white duration-300 hover:bg-blue-400">
+            <Link to="https://home.veridux.com.ng/login/email">
+              Login / Sign Up
+            </Link>
           </li>
         </ul>
       )}

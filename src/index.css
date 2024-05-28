@@ -16,7 +16,7 @@ body {
 }
 
 .faq-text{
-  @apply text-[#6A6B6C] text-[20px] mb-20
+  @apply text-[#6A6B6C] text-xl mb-20
 }
 
 .faq-header {
@@ -28,8 +28,8 @@ body {
 }
 
 .tc-subheader{
-@apply text-primary mb-2 mt-4 font-semibold
+@apply text-primary mb-2 mt-4 font-semibold text-2xl
 }
 .tc-paragraph{
-@apply text-secondary
+@apply text-secondary text-xl
 }
